@@ -4,15 +4,26 @@
     <section class="hero">
         <div class="hero-body">
             <div class="container">
-            <h1 class="title">
+            <h1 class="title is-1">
                 Hero title
             </h1>
-            <h2 class="subtitle">
+            <h4 class="subtitle is-1">
                 Hero subtitle
-            </h2>
+            </h4>
             </div>
         </div>
     </section>
+
+    <h2>Tags</h2>
+    <p id="all-tags">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">
+            <span class="tag is-dark is-large is-rounded">
+                {{ $name }}
+            </span>
+        </a>
+        {{ end }}
+    </p>
 
     <header class="homepage-header">
         <h1>{{.Title}}</h1>
@@ -27,23 +38,8 @@
     <div>
         <h2>Latest posts</h2>
         {{ range first 10 .Site.RegularPages }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-                <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
-                {{ .Summary }}
-            </li>
-        {{ end }}
-
-        {{ range first 10 .Site.RegularPages }}
         {{- partial "summary-vertical.html" . -}}
         {{ end }}
-
-        <h2>Tags</h2>
-        <ul id="all-tags">
-            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
-            {{ end }}
-        </ul>
 
         <h2>Sections</h2>
         {{ range first 10 .Site.Sections }}

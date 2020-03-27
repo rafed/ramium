@@ -3,21 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/post1/</loc>
+    <loc>uild/article1/</loc>
     <lastmod>2020-03-25T13:45:08+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>uild/article2/</loc>
+    <lastmod>2020-03-25T13:45:08+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>uild/tags/clean-code/</loc>
+    <lastmod>2020-03-25T13:45:08+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>uild/tags/orange/</loc>
+    <lastmod>2020-03-25T13:45:08+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>uild/tags/software-engineering/</loc>
+    <lastmod>2020-03-25T13:45:08+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>uild/tags/</loc>
+    <lastmod>2020-03-25T13:45:08+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>uild/</loc>
     <lastmod>2020-03-25T04:52:30+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>uild/categories/</loc>
   </url>
   
 </urlset>

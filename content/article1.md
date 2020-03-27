@@ -3,6 +3,7 @@ title: "Article 1"
 date: 2020-03-25T13:45:08+06:00
 draft: false
 tags: ["clean code", "software engineering"]
+image: "/image/pic.jpg"
 ---
 
 # Omae wa mou shindeiru

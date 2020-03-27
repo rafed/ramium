@@ -1,0 +1,9 @@
+
+.summary-vertical {
+    color: inherit;
+}
+
+.summary-vertical:hover .ra-underline {
+    text-decoration: underline;
+}
+

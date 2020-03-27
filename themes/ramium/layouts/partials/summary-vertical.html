@@ -1,16 +1,23 @@
-<a href="{{ .Permalink }}">
+<a href="{{ .Permalink }}" class="summary-vertical">
 <article class="media">
     <figure class="media-left">
         <p class="image is-128x128">
-        <img src="https://bulma.io/images/placeholders/128x128.png">
+        {{ with .Params.image }}
+            <img src="{{ . }}">
+        {{ else }}
+            <img src="https://bulma.io/images/placeholders/128x128.png">
+        {{ end }}
         </p>
     </figure>
+
+    <!-- <img src="{{ .Params.image }}"> -->
+
     <div class="media-content">
         <div class="content">
         <p>
             <strong>{{ .Title }}</strong>
             <small>
-                {{ .Date }}
+                {{ .Date.Format "Mon, Jan 2, 2006" }}
                 {{ $time := math.Round (div (countwords .Content) 220.0) }}
                 {{ if le $time 1}}
                     (1 min read)
