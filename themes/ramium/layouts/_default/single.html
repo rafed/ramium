@@ -1,0 +1,19 @@
+
+{{ define "main" }}
+
+<div class="columns is-centered">
+<div class="column is-9">
+    <h2>Tags</h2>
+
+    <ul id="tags">
+        {{ range .Params.tags }}
+            <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+        {{ end }}
+    </ul>
+
+    <h1 class="title">{{ .Title }}</h1>
+    {{ .Content }}
+</div>
+</div>
+
+{{ end }}

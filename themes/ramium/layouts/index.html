@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<main aria-role="main">
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+            <h1 class="title">
+                Hero title
+            </h1>
+            <h2 class="subtitle">
+                Hero subtitle
+            </h2>
+            </div>
+        </div>
+    </section>
+
+    <header class="homepage-header">
+        <h1>{{.Title}}</h1>
+        {{ with .Params.subtitle }}
+        <span class="subtitle">{{.}}</span>
+        {{ end }}
+    </header>
+    <div class="homepage-content">
+        <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
+        {{.Content}}
+    </div>
+    <div>
+        <h2>Latest posts</h2>
+        {{ range first 10 .Site.RegularPages }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+                {{ .Summary }}
+            </li>
+        {{ end }}
+
+        {{ range first 10 .Site.RegularPages }}
+        {{- partial "summary-vertical.html" . -}}
+        {{ end }}
+
+        <h2>Tags</h2>
+        <ul id="all-tags">
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
+            {{ end }}
+        </ul>
+
+        <h2>Sections</h2>
+        {{ range first 10 .Site.Sections }}
+            {{ .Render "summary"}}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+        {{ end }}
+    </div>
+</main>
+
+{{ end }}

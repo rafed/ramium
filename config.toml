@@ -1,0 +1,16 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+theme = "ramium"
+
+title = "Ramium Theme"
+disqusShortname = "rafed"
+googleAnalytics = "googra"
+
+paginate = 5
+paginatePath = "page"
+summaryLength = 45
+
+[params]
+    subtitle = "Today I Learned"
+    description = "The DevRa Tech Blog"
+    
