@@ -1,19 +1,23 @@
-
 {{ define "main" }}
 
 <div class="columns is-centered">
-<div class="column is-9">
-    <h2>Tags</h2>
+    <div class="column is-7">
+        <section class="section">
+            <div class="content">
+                <h2>Tags</h2>
 
-    <ul id="tags">
-        {{ range .Params.tags }}
-            <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
-        {{ end }}
-    </ul>
+                <ul id="tags">
+                    {{ range .Params.tags }}
+                    <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+                    {{ end }}
+                </ul>
 
-    <h1 class="title">{{ .Title }}</h1>
-    {{ .Content }}
-</div>
+                <h1 class="title">{{ .Title }}</h1>
+
+                {{ .Content }}
+            </div>
+        </section>
+    </div>
 </div>
 
 {{ end }}

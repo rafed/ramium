@@ -1,14 +1,18 @@
 {{ define "main" }}
 
-<div class="container">
-    <div class="section">
-        <div class="content">
-            <h1>{{ .Title }}</h1>
-            {{ range .Paginator.Pages }}
-            {{- partial "summary-vertical.html" . -}}
-            {{ end }}
-        </div>
+<div class="columns is-centered">
+    <div class="column is-9">
+        <section class="section">
+            <div class="content">
+                <h1>{{ .Title }}</h1>
+                {{ range .Paginator.Pages }}
+                {{- partial "summary-vertical.html" . -}}
+                {{ end }}
+            </div>
+        </section>
+
     </div>
+</div>
 </div>
 
 {{ if gt .Paginator.TotalPages 1 }}
