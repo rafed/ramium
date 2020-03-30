@@ -1,9 +1,12 @@
-baseURL = "http://example.org/"
+baseURL = "http://192.168.1.181/"
+#RelativeURLs=true
+#CanonifyURLs=true
+
 languageCode = "en-us"
 theme = "ramium"
 
 title = "Ramium Theme"
-disqusShortname = "rafed"
+disqusShortname = "rafed123"
 googleAnalytics = "googra"
 
 paginate = 5
@@ -11,6 +14,7 @@ paginatePath = "page"
 summaryLength = 45
 
 [params]
-    subtitle = "Today I Learned"
-    description = "The DevRa Tech Blog"
+    googleSearch = "000151824860492892407:kd5zijxwj6a"
+    subtitle = ""
+    description = ""
     

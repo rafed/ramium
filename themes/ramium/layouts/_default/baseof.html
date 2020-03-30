@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
     
-    {{- partialCached "head.html" . -}}
+    {{- partial "head.html" . -}}
 
     <body>
-        {{- partialCached "header.html" . -}}
+        {{- partialCached "navbar.html" . -}}
         {{- block "main" . }}{{- end }}
         {{- partialCached "footer.html" . -}}
     </body>

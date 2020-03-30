@@ -4,18 +4,28 @@
     <div class="column is-7">
         <section class="section">
             <div class="content">
-                <h2>Tags</h2>
-
+                <!-- <h2>Tags</h2>
                 <ul id="tags">
                     {{ range .Params.tags }}
                     <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
                     {{ end }}
-                </ul>
+                </ul> -->
 
-                <h1 class="title">{{ .Title }}</h1>
-
-                {{ .Content }}
+                <div class="blog-article">
+                    <h1 class="title">{{ .Title }}</h1>
+                    {{ with .Params.image }}
+                        <img src="{{ . }}">
+                    {{ end }}
+                    
+                    {{ .Content }}
+                </div>
             </div>
+        </section>
+
+        <section class="section">
+            {{- partial "social-media-share.html" . -}}
+            <br>
+            {{ template "_internal/disqus.html" . }}
         </section>
     </div>
 </div>

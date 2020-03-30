@@ -12,7 +12,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
 <link rel="stylesheet" href="/css/ramium.css">
-<script src="/js/ramium.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -22,3 +21,5 @@
 {{ if not (in (string .Site.BaseURL) "localhost") }}
     {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
+
+<script src="/js/ramium.js"></script>

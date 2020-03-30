@@ -1,53 +1,41 @@
 {{ define "main" }}
 
+<section class="hero has-text-centered">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-1">
+                {{ .Title }}
+            </h1>
+            <h4 class="subtitle is-1">
+                {{ .Content }}
+            </h4>
+        </div>
+    </div>
+</section>
+
+<section class="section has-text-centered">
+    <div class="content">
+        <h1>Topics</h1>
+        <p id="all-tags">
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">
+                <span class="tag is-dark is-large is-rounded">
+                    {{ $name }}
+                </span>
+            </a>
+            {{ end }}
+        </p>
+    </div>
+</section>
+
 <div class="columns is-centered">
-    <div class="column is-9">
-
-        <section class="hero ">
-            <div class="hero-body">
-                <div class="container">
-                    <h1 class="title is-1">
-                        Hero title Home
-                    </h1>
-                    <h4 class="subtitle is-1">
-                        Hero subtitle
-                    </h4>
-                </div>
-            </div>
-        </section>
-
-        <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
-        <!-- <header class="homepage-header">
-        <h1>{{ .Title }}</h1>
-        {{ with .Params.subtitle }}
-        <span class="subtitle">{{.}}</span>
-        {{ end }}
-    </header>
-    <div class="homepage-content">
-        {{.Content}}
-    </div> -->
-
-        <section class="section">
-            <div class="content">
-                <h1>Tags</h1>
-                <p id="all-tags">
-                    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                    <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">
-                        <span class="tag is-dark is-large is-rounded">
-                            {{ $name }}
-                        </span>
-                    </a>
-                    {{ end }}
-                </p>
-            </div>
-        </section>
-
+    <div class="column is-8">
         <section class="section">
             <div class="content">
                 <div>
                     <h2>Latest posts</h2>
                     {{ range first 10 .Site.RegularPages }}
-                    {{- partial "summary-vertical.html" . -}}
+                    {{- partial "blog-summary-vertical.html" . -}}
                     {{ end }}
 
                     <h2>Sections</h2>

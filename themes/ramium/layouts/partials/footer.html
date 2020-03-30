@@ -1,3 +1,8 @@
+{{ with .Site.Params.GoogleSearch }}
+<script async src="https://cse.google.com/cse.js?cx={{ . }}"></script>
+<gcse:searchresults-only></gcse:searchresults-only>
+{{ end }}
+
 <p>{{ .Site.Params.Subtitle }}</p>
 <p>{{ .Site.DisqusShortname }} </p>
 <p>{{ .Site.GoogleAnalytics }} </p>
