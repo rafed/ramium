@@ -5,12 +5,11 @@ baseURL = "http://192.168.1.181/"
 languageCode = "en-us"
 theme = "ramium"
 
-title = "Ramium Theme"
+title = "Ramium"
 disqusShortname = "rafed123"
 googleAnalytics = "googra"
 
-paginate = 5
-paginatePath = "page"
+paginate = 1
 summaryLength = 45
 
 [params]
@@ -18,3 +17,9 @@ summaryLength = 45
     subtitle = ""
     description = ""
     
+[taxonomies]
+    tag = "tags"
+    series = "series"
+
+#[permalinks] 
+#    posts = "/:slug"

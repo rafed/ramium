@@ -1,11 +1,22 @@
 
-/* .summary-vertical a {
-    color: inherit;
-} */
+/******* navbar ****/
 
-/* .summary-vertical:hover .ra-underline {
-    text-decoration: underline;
-} */
+.navbar-brand a {
+    font-size: 20px;
+}
+
+/****** mega menu from hunzaboy ******/
+
+.navbar-item.is-mega {
+    position: static;
+}
+
+.navbar-item.is-mega.is-mega-menu-title {
+    margin-bottom: 0;
+    padding: .375rem 1rem;
+}
+
+/**************************/
 
 /* @media screen and (max-width: 1023px) {
     .searchBar {
@@ -33,7 +44,11 @@ input:focus::placeholder {
     line-height: 2.7;
 }
 
-.blog-article p {
+#blog-body {
+    min-height: 75vh;
+}
+
+.blog-text p {
     font-size: 1.2em;
     color: rgba(0, 0, 0, 0.84);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -42,11 +57,7 @@ input:focus::placeholder {
     /* margin-bottom: 2em; */
 }
 
-/* p {
-
-} */
-
-.blog-article img {
+.blog-text img {
     max-width: 92%;
     display: block;
     margin-left: auto;
@@ -57,4 +68,14 @@ input:focus::placeholder {
 
 #title-banner {
     font-size: 120px;
+}
+
+/******** Footer *******/
+
+.footer p {
+    font-size: 0.9em;
+}
+
+.footer a {
+    text-decoration: underline;
 }

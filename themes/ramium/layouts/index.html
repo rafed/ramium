@@ -1,12 +1,13 @@
 {{ define "main" }}
 
-<section class="hero has-text-centered">
+<!-- is-fullheight-with-navbar is-bold is-light -->
+<section class="hero is-medium has-text-centered">
     <div class="hero-body">
         <div class="container">
             <h1 class="title is-1">
                 {{ .Title }}
             </h1>
-            <h4 class="subtitle is-1">
+            <h4 class="subtitle is-2">
                 {{ .Content }}
             </h4>
         </div>
@@ -15,12 +16,12 @@
 
 <section class="section has-text-centered">
     <div class="content">
-        <h1>Topics</h1>
+        <h1>Read articles by tags</h1>
         <p id="all-tags">
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
             <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">
                 <span class="tag is-dark is-large is-rounded">
-                    {{ $name }}
+                    {{ $name | humanize }}
                 </span>
             </a>
             {{ end }}
@@ -28,22 +29,37 @@
     </div>
 </section>
 
+<section class="section has-text-centered">
+    <div class="content">
+        <h1>Series articles</h1>
+        <p id="all-tags">
+            {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+            <a href="{{ "/series/" | relLangURL }}{{ $name | urlize }}">
+                <span class="tag is-dark is-large is-rounded">
+                    {{ $name | humanize }}
+                </span>
+            </a>
+            {{ end }}
+        </p>
+    </div>
+</section>
+
+<!-- {{ range first 5 .Site.Sections }}
+{{ if not (eq  .Title "Posts") }}
+<li>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+</li>
+{{ end }}
+{{ end }} -->
+
 <div class="columns is-centered">
     <div class="column is-8">
         <section class="section">
             <div class="content">
                 <div>
                     <h2>Latest posts</h2>
-                    {{ range first 10 .Site.RegularPages }}
+                    {{ range first 5 .Site.RegularPages }}
                     {{- partial "blog-summary-vertical.html" . -}}
-                    {{ end }}
-
-                    <h2>Sections</h2>
-                    {{ range first 10 .Site.Sections }}
-                    {{ .Render "summary"}}
-                    <li>
-                        <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    </li>
                     {{ end }}
                 </div>
             </div>

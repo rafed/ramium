@@ -1,22 +1,22 @@
 {{ define "main" }}
 
-<div class="columns is-centered">
+<div id="blog-body" class="columns is-centered">
     <div class="column is-7">
         <section class="section">
             <div class="content">
-                <!-- <h2>Tags</h2>
+                <h1 class="title">{{ .Title }}</h1>
+                <h4>Tags</h4>
                 <ul id="tags">
                     {{ range .Params.tags }}
-                    <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+                    <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . | humanize }}</a> </li>
                     {{ end }}
-                </ul> -->
+                </ul>
 
-                <div class="blog-article">
-                    <h1 class="title">{{ .Title }}</h1>
+                <div class="blog-text">
                     {{ with .Params.image }}
-                        <img src="{{ . }}">
+                    <img src="{{ . }}">
                     {{ end }}
-                    
+
                     {{ .Content }}
                 </div>
             </div>
