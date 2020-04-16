@@ -5,69 +5,65 @@
     font-size: 20px;
 }
 
-/****** mega menu from hunzaboy ******/
-
-.navbar-item.is-mega {
-    position: static;
-}
-
-.navbar-item.is-mega.is-mega-menu-title {
-    margin-bottom: 0;
-    padding: .375rem 1rem;
-}
-
-/**************************/
-
-/* @media screen and (max-width: 1023px) {
-    .searchBar {
-        box-sizing: border-box;
-    }
-
-    .searchBar input {
-        width: 1000px;
-        width: 100%;
-        max-width: 500px;
-        box-sizing: border-box;
-        margin: 0 -17px;
-    }
-} */
-
-/* .cse-search-input-box-id
-    
-} */
-
 input:focus::placeholder {
     color: transparent;
 }
 
-#all-tags  {
+/******* HOME PAGE *******/
+
+#tags-summary  {
     line-height: 2.7;
 }
 
-#blog-body {
-    min-height: 75vh;
+#title-banner {
+    font-size: 120px;
 }
 
-.blog-text p {
+@media all and (max-width: 768px) {
+    #all-tags {
+        list-style-type: none;
+    }
+}
+
+@media all and (min-width: 769px) {
+    #all-tags {
+        columns: 2;
+        list-style-type: none;
+    }
+}
+
+/**** BLOG MAIN ********/
+
+#page-body {
+    margin-top: 2em;
+    min-height: 75vh;
+    position: relative;
+}
+
+.blog-text {
     font-size: 1.2em;
     color: rgba(0, 0, 0, 0.84);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     line-height: 1.8;
     margin-top: 1.8em;
-    /* margin-bottom: 2em; */
 }
 
 .blog-text img {
-    max-width: 92%;
+    max-width: 85%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
-#title-banner {
-    font-size: 120px;
+#admin-table-summary {
+    font-weight: bold;
+}
+
+#author-image {
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /******** Footer *******/
@@ -77,5 +73,82 @@ input:focus::placeholder {
 }
 
 .footer a {
+    text-decoration: underline;
+}
+
+.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 0px;
+}
+
+/* ----- BLOG BRIEF ------- */
+
+.blog-brief .is-4 {
+    margin-bottom: 0.4em;
+}
+
+@media all and (min-width: 769px) {
+    .blog-brief img {
+        margin-top: 0.35em;
+    }
+}
+
+.blog-brief .date {
+    font-weight: 500;
+}
+
+.blog-brief .summary {
+    color: black;
+    opacity: 0.84;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.1em;
+}
+
+.blog-brief .column {
+    padding-left: 0;
+}
+
+@media all and (max-width: 768px) {
+    .blog-brief img {
+        max-width: 85%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .blog-brief .column {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.continue-reading {
+    margin-bottom: 0.2em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.continue-reading a {
+    color: black;
+    opacity: 0.84;
+}
+
+.continue-reading a:hover {
+    text-decoration: underline;
+    color: black;
+    opacity: 0.84;
+}
+
+/***** BULMA FIX ******/
+
+.columns {
+    margin: 0;
+}
+
+/**************/
+
+ul.sections-list {
+    list-style-type: square;
+}
+
+ul.sections-list a:hover {
     text-decoration: underline;
 }

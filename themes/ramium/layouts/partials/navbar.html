@@ -1,6 +1,6 @@
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    <a class="navbar-item" href={{ "/" | relURL }}>
       {{ with .Site.Title }}
       <strong>{{ . }} </strong>
       {{ end }}
@@ -16,17 +16,24 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-        <a class="navbar-item" href="/">Home</a>
-      
+      {{ range .Site.Menus.main }}
+      {{ if .HasChildren }}
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">Blogs</a>
-
+        <a class="navbar-link">{{- .Name -}}</a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="/tags/">See all tags</a>
-          <!-- <hr class="navbar-divider"> -->
-          <a class="navbar-item" href="/series/">See all series articles</a>
+          {{ range .Children }}
+          <a class="navbar-item" href="{{ .URL }}">
+            {{- .Name -}}
+          </a>
+          {{ end }}
         </div>
       </div>
+      {{ else }}
+      <a class="navbar-item" href="{{ .URL }}">
+        {{- .Name -}}
+      </a>
+      {{ end }}
+      {{ end }}
     </div>
 
     {{ with .Site.Params.GoogleSearch }}

@@ -1,33 +1,49 @@
 {{ define "main" }}
 
-<div id="blog-body" class="columns is-centered">
-    <div class="column is-7">
-        <section class="section">
-            <div class="content">
-                <h1 class="title">{{ .Title }}</h1>
-                <h4>Tags</h4>
-                <ul id="tags">
-                    {{ range .Params.tags }}
-                    <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . | humanize }}</a> </li>
-                    {{ end }}
-                </ul>
+<div class="content">
+    <h1 class="title is-3">{{ .Title | title }}</h1>
 
-                <div class="blog-text">
-                    {{ with .Params.image }}
-                    <img src="{{ . }}">
-                    {{ end }}
-
-                    {{ .Content }}
-                </div>
+    <div class="level is-mobile">
+        <div class="level-left">
+            <div class="level-item">
+                <p class="subtitle is-6 blog-brief-date">
+                    {{- .Date.Format "Jan 2, 2006" }}
+                </p>
             </div>
-        </section>
 
-        <section class="section">
-            {{- partial "social-media-share.html" . -}}
-            <br>
-            {{ template "_internal/disqus.html" . }}
-        </section>
+            <div class="level-item">
+                <p class="subtitle is-6">
+                    {{ partial "time-to-read.html" . }}
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            <div class="tags">
+                {{ range .Params.tags }}
+                <a class="tag is-dark is-rounded" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | humanize }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <div class="tags is-hidden-desktop">
+        {{ range .Params.tags }}
+        <a class="tag is-dark is-rounded" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | humanize }}</a>
+        {{ end }}
+    </div>
+
+    <div class="blog-text">
+        {{ with .Params.image }}
+        <img src="{{ . | relURL }}">
+        {{ end }}
+
+        {{ .Content }}
     </div>
 </div>
+
+{{- partial "social-media-share.html" -}}
+<br>
+{{ template "_internal/disqus.html" }}
+<!-- {{ partial "disqus.html" . }} -->
 
 {{ end }}

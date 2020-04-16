@@ -1,25 +1,64 @@
-baseURL = "http://192.168.1.181/"
+baseURL = "https://rafed.github.io/ramium/"
 #RelativeURLs=true
 #CanonifyURLs=true
 
 languageCode = "en-us"
 theme = "ramium"
+assetDir = "static"
 
 title = "Ramium"
 disqusShortname = "rafed123"
 googleAnalytics = "googra"
 
-paginate = 1
-summaryLength = 45
+summaryLength = 35
+pluralizeListTitles = false
+enableemoji = false
 
 [params]
+    description = "A description for the meta tag of the site"
     googleSearch = "000151824860492892407:kd5zijxwj6a"
-    subtitle = ""
-    description = ""
-    
+    math = false #best to enable this in a page
+
+    tagsInHome = 6
+    sectionsInHome = 5
+    paginatePostsPerPage = 5
+    paginateTagsPerPage = 4
+    paginateSectionsPerPage = 2
+
 [taxonomies]
     tag = "tags"
-    series = "series"
 
-#[permalinks] 
-#    posts = "/:slug"
+[menu]
+    [[menu.main]]
+        name = "Home"
+        url = "/"
+        weight = 1
+
+    [[menu.main]]
+        identifier = "blog"
+        name = "This Blog"
+        weight = 2
+            [[menu.main]]
+                parent = "blog"
+                name = "All Tags"
+                url = "/tags/"
+                weight = 1
+            [[menu.main]]
+                parent = "blog"
+                name = "All Sections"
+                url = "/sections/"
+                weight = 2
+            [[menu.main]]
+                parent = "blog"
+                name = "All Posts"
+                url = "/posts/"
+                weight = 3
+    
+    [[menu.main]]
+        name = "Author"
+        url = "/author/"
+        weight = 3
+
+[markup.goldmark.renderer]
+    unsafe= true
+

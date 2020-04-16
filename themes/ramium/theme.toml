@@ -3,12 +3,12 @@
 
 name = "Ramium"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/rafed123/ramium/blob/master/LICENSE"
 description = ""
-homepage = "http://example.com/"
+homepage = "http://rafed123.github.io/ramium"
 tags = []
 features = []
-min_version = "0.1.1"
+min_version = "0.572"
 
 [author]
   name = "Rafed Muhammad Yasir"

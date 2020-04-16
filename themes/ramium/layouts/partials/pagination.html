@@ -1,0 +1,92 @@
+{{ $paginator := .Paginator }}
+
+<!-- Number of links either side of the current page -->
+{{ $adjacent_links := 1 }}
+
+<!-- $max_links = ($adjacent_links * 2) + 1 -->
+{{ $max_links := (add (mul $adjacent_links 2) 1) }}
+
+<!-- Pages to print -->
+{{ $lower_limit := 1 }}
+{{ $upper_limit := $paginator.TotalPages }}
+{{ $include_lower_ellipsis := false }}
+{{ $include_upper_ellipsis := false }}
+
+{{ if gt $paginator.TotalPages (add $max_links 2) }}
+
+    <!-- If we have more pages before the current page than we can print -->
+    {{ if ge $paginator.PageNumber $adjacent_links }}
+
+        {{ $lower_limit = sub $paginator.PageNumber $adjacent_links }}
+
+        <!-- Show more pages at the end of the range -->
+        {{ if lt (sub $paginator.TotalPages $lower_limit) $max_links }}
+            {{ $lower_limit = add 1 (sub $paginator.TotalPages $max_links) }}
+        {{ end }}
+
+        <!-- Show ellipsis -->
+        {{ if gt (sub $lower_limit 1) 1 }}
+            {{ $include_lower_ellipsis = true }}
+        {{ end }}
+
+    {{ end }}
+
+    <!-- If we have more pages after the current page than we can print -->
+    {{ if gt (sub $paginator.TotalPages $paginator.PageNumber) $adjacent_links }}
+
+        {{ $upper_limit = add $paginator.PageNumber $adjacent_links }}
+
+        <!-- Show more pages at the beginning of the range -->
+        {{ if le $upper_limit $max_links }}
+            {{ $upper_limit = $max_links }}
+        {{ end }}
+
+        <!-- Show ellipsis -->
+        {{ if gt (sub $paginator.TotalPages $upper_limit) 1 }}
+            {{ $include_upper_ellipsis = true }}
+        {{ end }}
+
+    {{ end }}
+
+{{ end }}
+
+<!-- If there's more than one page -->
+{{ if gt $paginator.TotalPages 1 }}
+<section class="section">
+    <nav class="pagination is-centered">
+
+        {{ if $paginator.HasPrev }}
+            <a class="pagination-previous is-dark" href="{{ $paginator.Prev.URL }}">Previous</a>
+        {{ else }}
+            <a class="pagination-previous" disabled>Previous</a>
+        {{ end }}
+
+        {{ if $paginator.HasNext }}
+            <a class="pagination-next" href="{{ $paginator.Next.URL }}">Next page</a>
+        {{ else }}
+            <a class="pagination-next" disabled>Next page</a>
+        {{ end }}
+
+
+        <ul class="pagination-list">
+
+        {{ range $paginator.Pagers }}
+
+            <!-- Include first, last, and middle pages -->
+            {{ if or (or (eq .PageNumber 1) (eq .PageNumber $paginator.TotalPages)) (and (ge .PageNumber $lower_limit) (le .PageNumber $upper_limit)) }}
+
+                <li><a href="{{ .URL }}" class="pagination-link{{ if eq $paginator.PageNumber .PageNumber }} is-current{{ end }}">{{ .PageNumber }}</a></li>
+
+                <!-- If we're on the first page and inserting an ellipsis, or just before the last page and inserting an ellipsis -->
+                {{ if or (and (eq .PageNumber 1) (eq $include_lower_ellipsis true)) (and (eq .PageNumber $upper_limit) (eq $include_upper_ellipsis true)) }}
+                    <li><span class="pagination-ellipsis">&hellip;</span></li>
+                {{ end }}
+
+            {{ end }}
+
+        {{ end }}
+
+        </ul>
+    </nav>
+</section>
+{{ end }}

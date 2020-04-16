@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<div class="content">
+    <h1 class="title is-3">Sections</h1>
+
+    <ul class="sections-list">
+        {{ $paginator := .Paginate (where .Site.Sections.ByTitle ".Title" "not in" "Posts Sections") .Site.Params.PaginateSectionsPerPage }}
+        {{ range $i, $e := $paginator.Pages }}
+        <li>
+            <a href="{{ $e.RelPermalink }}">
+                <h1 class="title is-4"> {{ $e.Title }}</h1>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+
+{{- partial "pagination.html" . -}}
+
+{{ end }}

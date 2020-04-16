@@ -5,9 +5,9 @@
             <div class="image is-128x128">
                 <!-- <div class="image is-4by3"> -->
                 {{ with .Params.image }}
-                <img src="{{ . }}">
+                <img src="{{ . | relURL }}">
                 {{ else }}
-                <img src="/image/default.jpeg">
+                <img src="{{ "/image/default.jpeg" | relURL }}">
                 {{ end }}
             </div>
         </figure>

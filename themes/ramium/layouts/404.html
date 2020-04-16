@@ -5,11 +5,23 @@
     <div class="hero-body">
         <div class="container">
             <h1 class="title is-1">
-                {{ .Title }}
+                404! Page not found...
             </h1>
-            <h4 class="subtitle is-2">
-                {{ .Content }}
-            </h4>
+
+            <br><br><br>
+
+            <h1 class="subtitle is-4">
+                    Here's what may have happened:
+                </h1>
+                <h1 class="subtitle is-6">
+                    1. The page does not exist
+                </h1>
+                <h1 class="subtitle is-6">
+                    2. The page was moved to another location. Use the search bar above
+                </h1>
+                <h1 class="subtitle is-6">
+                    3. The content was removed. Read an article from below.
+                </h1>
         </div>
     </div>
 </section>
@@ -18,7 +30,13 @@
     <div class="content">
         <h1>Read articles by tags</h1>
         <p id="all-tags">
+            {{ $randTags := (slice)}}
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                {{ $randTags = $randTags | append $name }}
+            {{ end }}
+            {{ $randTags = sort (first .Site.Params.TagsInHome (shuffle $randTags)) }}
+
+            {{ range $name := $randTags }}
             <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">
                 <span class="tag is-dark is-large is-rounded">
                     {{ $name | humanize }}
@@ -29,29 +47,36 @@
     </div>
 </section>
 
-<div class="columns is-centered">
-    <div class="column is-8">
-        <section class="section">
-            <div class="content">
-                <div>
-                    <h2>Latest posts</h2>
-                    {{ range first 5 .Site.RegularPages }}
-                    {{- partial "blog-summary-vertical.html" . -}}
-                    {{ end }}
-
-                    <h2>Sections</h2>
-                    {{ range first 5 .Site.Sections }}
-                    {{ if not (eq  .Title "Posts") }}
-                    <li>
-                        <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    </li>
-                    {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-        </section>
-
+<section class="section has-text-centered">
+    <div class="content">
+        <h1>Sections</h1>
+        <p id="all-series">
+            {{ $randSections := shuffle (where .Site.Sections ".Title" "not in" "Posts Sections") }}
+            {{ range sort (first .Site.Params.SectionsInHome $randSections) "Title" }}
+            <a href="{{ .RelPermalink }}">
+                <span class="tag is-dark is-large">
+                    {{ .Title }}
+                </span>
+            </a>
+            {{ end }}
+        </p>
     </div>
-</div>
+</section>
+
+<div class="columns is-centered">
+        <div class="column is-8">
+            <section class="section">
+                <div class="content">
+                    <div>
+                        <h2>Latest posts</h2>
+                        {{ range first 5 (where .Site.RegularPages.ByPublishDate.Reverse ".Section" "!=" "Sections") }}
+                            {{- partial "blog-summary-vertical.html" . -}}
+                        {{ end }}
+                    </div>
+                </div>
+            </section>
+    
+        </div>
+    </div>
 
 {{ end }}

@@ -1,0 +1,62 @@
+<div class="blog-brief">
+    <a href="{{ .RelPermalink }}">
+        <h3 class="title is-4">
+            {{ .Title | title }}
+        </h3>
+    </a>
+
+    <div class="level is-mobile">
+        <div class="level-left">
+            <div class="level-item">
+                <p class="subtitle is-6 date">
+                    {{- .Date.Format "Jan 2, 2006" }}
+                </p>
+            </div>
+
+            <div class="level-item">
+                <p class="subtitle is-6">
+                    {{ partial "time-to-read.html" . }}
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            {{ range .Params.tags }}
+            <a class="tag is-rounded" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | humanize }}</a>
+            {{ end }}
+        </div>
+    </div>
+
+    {{ if .Params.image }}
+    <div class="columns">
+        <div class="column">
+            <figure>
+                <a href="{{ .RelPermalink }}">
+                    <img src="{{ .Params.image | relURL }}">
+                </a>
+            </figure>
+        </div>
+
+        <div class="column is-four-fifths">
+            <a href="{{ .RelPermalink }}">
+                <p class="summary">{{ .Summary }}</p>
+            </a>
+        </div>
+    </div>
+    {{ else }}
+    <div>
+        <a href="{{ .RelPermalink }}">
+            <p class="summary">{{ .Summary | plainify }}</p>
+        </a>
+    </div>
+    {{ end }}
+
+    <div class="level is-mobile continue-reading">
+        <div class="level-left">
+        </div>
+        <div class="level-right">
+            <a href="{{ .RelPermalink }}">Continue reading <i class="fa fa-angle-double-right"
+                    aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <br>
+</div>
