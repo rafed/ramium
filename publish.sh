@@ -1,6 +1,13 @@
 
 #!/bin/sh
 
+# echo "public" >> .gitignore
+# git checkout --orphan gh-pages
+# git reset --hard
+# git commit --allow-empty -m "Initializing gh-pages branch"
+# git push origin gh-pages
+# git checkout master
+
 if [ "`git status -s`" ]
 then
     echo "The working directory is dirty. Please commit any pending changes."
