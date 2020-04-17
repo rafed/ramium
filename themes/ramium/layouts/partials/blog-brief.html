@@ -5,18 +5,26 @@
         </h3>
     </a>
 
-    <div class="level is-mobile">
+    <div class="level is-mobile details">
         <div class="level-left">
+
+            {{ if or .Params.showDate .Site.Params.showDate }}
             <div class="level-item">
-                <p class="subtitle is-6 date">
-                    {{- .Date.Format "Jan 2, 2006" }}
-                </p>
+                <a href="{{ .RelPermalink }}">
+                    <p class="subtitle is-6 date">
+                        {{- .Date.Format "Jan 2, 2006" }}
+                    </p>
+                </a>
             </div>
+            {{ end }}
+
 
             <div class="level-item">
-                <p class="subtitle is-6">
-                    {{ partial "time-to-read.html" . }}
-                </p>
+                <a href="{{ .RelPermalink }}">
+                    <p class="subtitle is-6">
+                        {{ partial "time-to-read.html" . }}
+                    </p>
+                </a>
             </div>
         </div>
         <div class="level-right is-hidden-touch">
@@ -58,5 +66,5 @@
                     aria-hidden="true"></i></a>
         </div>
     </div>
-    <br>
+    <hr>
 </div>

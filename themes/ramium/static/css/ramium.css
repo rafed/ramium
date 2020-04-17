@@ -83,7 +83,10 @@ input:focus::placeholder {
 /* ----- BLOG BRIEF ------- */
 
 .blog-brief .is-4 {
-    margin-bottom: 0.4em;
+    margin-bottom: 0.3em;
+}
+.blog-brief .is-4:hover {
+    text-decoration: underline;
 }
 
 @media all and (min-width: 769px) {
@@ -105,7 +108,12 @@ input:focus::placeholder {
 
 .blog-brief .column {
     padding-left: 0;
+    padding-top: 0;
 }
+
+/* .blog-brief .details {
+    margin-bottom: 0.7em;
+} */
 
 @media all and (max-width: 768px) {
     .blog-brief img {
@@ -124,6 +132,7 @@ input:focus::placeholder {
 .continue-reading {
     margin-bottom: 0.2em !important;
     margin-bottom: 0.5em !important;
+    font-weight: 450;
 }
 
 .continue-reading a {

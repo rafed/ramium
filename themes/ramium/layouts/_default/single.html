@@ -5,11 +5,14 @@
 
     <div class="level is-mobile">
         <div class="level-left">
+
+            {{ if or .Params.showDate .Site.Params.showDate }}
             <div class="level-item">
                 <p class="subtitle is-6 blog-brief-date">
                     {{- .Date.Format "Jan 2, 2006" }}
                 </p>
             </div>
+            {{ end }}
 
             <div class="level-item">
                 <p class="subtitle is-6">
