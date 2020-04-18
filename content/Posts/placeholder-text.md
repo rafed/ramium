@@ -1,13 +1,9 @@
-+++
-author = "Hugo Authors"
-title = "Placeholder Text"
-date = "2019-03-09"
-description = "Lorem Ipsum Dolor Si Amet"
-tags = [
-    "markdown",
-    "text",
-]
-+++
+---
+title: "Placeholder Text"
+date: 2020-04-17
+description: "Lorem Ipsum Dolor Si Amet"
+tags: ["markdown", "text"]
+---
 
 Lorem est tota propiore conpellat pectoribus de
 pectora summo. <!--more-->Redit teque digerit hominumque toris verebor lumina non cervice

@@ -1,8 +1,8 @@
 ---
-author: Hugo Authors
 title: Math Typesetting
-date: 2019-03-08
+date: 2020-04-14
 description: A brief guide to setup KaTeX
+tags: ["math", "markdown", "Katex"]
 math: true
 ---
 
