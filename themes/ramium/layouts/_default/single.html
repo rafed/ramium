@@ -1,21 +1,20 @@
 {{ define "main" }}
 
-<div class="content">
+<div class="content blog">
     <h1 class="title is-3">{{ .Title | title }}</h1>
 
-    <div class="level is-mobile">
+    <div id="infobar" class="level is-mobile">
         <div class="level-left">
-
             {{ if or .Params.showDate .Site.Params.showDate }}
             <div class="level-item">
-                <p class="subtitle is-6 blog-brief-date">
+                <p class="subtitle info">
                     {{- .Date.Format "Jan 2, 2006" }}
                 </p>
             </div>
             {{ end }}
 
             <div class="level-item">
-                <p class="subtitle is-6">
+                <p class="subtitle info">
                     {{ partial "time-to-read.html" . }}
                 </p>
             </div>

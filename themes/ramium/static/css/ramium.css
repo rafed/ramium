@@ -40,6 +40,16 @@ input:focus::placeholder {
     position: relative;
 }
 
+.info {
+    font-size: 0.9em;
+}
+
+@media all and (max-width: 1023px) {
+    #infobar {
+        margin-bottom: 0.5em;
+    }
+}
+
 .blog-text {
     font-size: 1.2em;
     color: rgba(0, 0, 0, 0.84);
@@ -77,6 +87,10 @@ input:focus::placeholder {
 
 .blog-brief .date {
     font-weight: 500;
+}
+
+.blog-brief .info {
+    font-size: 0.8em;
 }
 
 .blog-brief .summary {

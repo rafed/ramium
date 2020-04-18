@@ -11,7 +11,7 @@
             {{ if or .Params.showDate .Site.Params.showDate }}
             <div class="level-item">
                 <a href="{{ .RelPermalink }}">
-                    <p class="subtitle is-6 date">
+                    <p class="subtitle info date">
                         {{- .Date.Format "Jan 2, 2006" }}
                     </p>
                 </a>
@@ -21,7 +21,7 @@
 
             <div class="level-item">
                 <a href="{{ .RelPermalink }}">
-                    <p class="subtitle is-6">
+                    <p class="subtitle info">
                         {{ partial "time-to-read.html" . }}
                     </p>
                 </a>
