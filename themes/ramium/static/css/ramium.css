@@ -105,7 +105,7 @@ h1.title.is-3 {
 
     overflow: hidden;
     max-height: 4.4em;
-    min-height: 4.6em;
+    min-height: 1.1em;
 }
 
 @media all and (min-width: 769px) { /*for large devices*/
@@ -113,6 +113,7 @@ h1.title.is-3 {
         height: 5em;
         float: left;       
         margin-right: 0.8em;
+        display: block;
     }
 }
 
@@ -128,6 +129,7 @@ h1.title.is-3 {
 }
 
 .continue-reading {
+    clear: both;
     margin-top: 0.5em;
     font-weight: 450;
 }
