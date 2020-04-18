@@ -10,7 +10,7 @@ title = "Ramium"
 disqusShortname = "rafed123"
 googleAnalytics = "googra"
 
-summaryLength = 35
+summaryLength = 40
 pluralizeListTitles = false
 enableemoji = false
 
@@ -18,7 +18,7 @@ enableemoji = false
     description = "A description for the meta tag of the site"
     googleSearch = "000151824860492892407:kd5zijxwj6a"
     math = false #best to enable this in a page
-    showDate = false #make false if dont want to show date
+    showDate = true #make false if dont want to show date
 
     tagsInHome = 6
     sectionsInHome = 5

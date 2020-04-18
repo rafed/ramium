@@ -34,29 +34,19 @@
         </div>
     </div>
 
-    {{ if .Params.image }}
-    <div class="columns">
-        <div class="column">
-            <figure>
-                <a href="{{ .RelPermalink }}">
-                    <img src="{{ .Params.image | relURL }}">
-                </a>
-            </figure>
-        </div>
-
-        <div class="column is-four-fifths">
+    <div>
+        {{ if .Params.image }}
             <a href="{{ .RelPermalink }}">
-                <p class="summary">{{ .Summary }}</p>
+                <img src="{{ .Params.image | relURL }}">
+            </a>
+        {{ end }}
+
+        <div>
+            <a href="{{ .RelPermalink }}">
+                <p class="summary">{{ .Summary | plainify }}</p>
             </a>
         </div>
     </div>
-    {{ else }}
-    <div>
-        <a href="{{ .RelPermalink }}">
-            <p class="summary">{{ .Summary | plainify }}</p>
-        </a>
-    </div>
-    {{ end }}
 
     <div class="level is-mobile continue-reading">
         <div class="level-left">

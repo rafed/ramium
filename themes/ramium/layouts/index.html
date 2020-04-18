@@ -25,7 +25,7 @@
         <a href="{{ "/tags/" | relURL }}">
             <h1>Read articles by tags</h1>
         </a>
-        <p id="tags-summary">
+        <p class="tags-summary">
             {{ $randTags := (slice)}}
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
             {{ $randTags = $randTags | append $name }}
@@ -48,7 +48,7 @@
         <a href="{{ "/sections/" | relURL }}">
             <h1>Sections</h1>
         </a>
-        <p id="all-series">
+        <p class="tags-summary">
             {{ $randSections := shuffle (where .Site.Sections ".Title" "not in" "Posts Sections") }}
             {{ range sort (first .Site.Params.SectionsInHome $randSections) "Title" }}
             <a href="{{ .RelPermalink }}">
