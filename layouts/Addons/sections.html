@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class="content">
+    <h1 class="title is-3">{{ .Title | title }}</h1>
+
+    <div class="sections-list">
+        {{/* $paginator := .Paginate (where .Site.Sections.ByTitle ".Title" "not in" "posts addons") .Site.Params.PaginateSectionsPerPage */}}
+
+        {{ $sections := where .Site.Sections.ByTitle ".Title" "not in" "Posts Addons" }}
+        {{ range $i, $e := $sections }}
+        <a href="{{ $e.RelPermalink }}">
+            <h1 class="title is-4"> {{ add $i 1 }}. {{ $e.Title | humanize | title }}</h1>
+        </a>
+        {{ end }}
+    </div>
+</div>
+
+{{ end }}

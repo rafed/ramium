@@ -1,0 +1,50 @@
+<div id="social-media-share" class="has-text-centered">
+	<p><i>Sharing is caring!</i></p>
+	<br>
+	
+	<div class="share-buttons">
+	    <a  href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Facebook. Opens in a new window.">
+	        <img src={{ "/img/icons/45px/facebook.png" | relURL }}>
+	    </a>
+
+	    <a  href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Twitter. Opens in a new window." >
+	        <img src={{ "/img/icons/45px/twitter.png" | relURL }}>
+	    </a>
+
+		<a  href="http://www.reddit.com/submit?url={{ .Permalink }}"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Reddit. Opens in a new window." >
+	        <img src={{ "/img/icons/45px/reddit.png" | relURL }}>
+	    </a>
+
+	    <a  href="http://pinterest.com/pin/create/button/?url={{ .Permalink }}"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Pinterest. Opens in a new window." >
+	        <img src={{ "/img/icons/45px/pinterest.png" | relURL }}>
+	    </a>
+
+	    <a  href="http://www.tumblr.com/share/link?url={{ .Permalink }}"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Tumblr. Opens in a new window." >
+	        <img src={{ "/img/icons/45px/tumblr.png" | relURL }}>
+	    </a>
+
+		<a  href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}
+			&title={{ .Title }}&summary={{ .Summary }}&source=rafed123.github.io"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on LinkedIn. Opens in a new window." >
+	        <img src={{ "/img/icons/45px/linkedin.png" | relURL }}>
+	    </a>
+
+	    <a  href="mailto:?subject={{ .Title }}&amp;body=Check out this site {{ .Permalink }}"
+	        title="Share via Email. Opens in a new window." >
+	        <img src={{ "/img/icons/45px/mail.png" | relURL }}>
+	    </a>
+	</div>
+</div>
+
+

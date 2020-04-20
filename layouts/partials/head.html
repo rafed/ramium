@@ -1,0 +1,36 @@
+<title>
+    {{- if not .IsHome }}
+    {{ with .Title }}{{ . }} | {{ end }}
+    {{ end }}
+    {{ .Site.Title -}}
+</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="description" 
+      content="{{- with .Description }}{{ . }}
+                {{ else }}{{ with .Summary }}{{ . }}
+                {{ else }}{{ .Site.Params.description }}
+                {{ end }}{{ end -}}">
+
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}image/favicon.ico">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css">
+
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+
+{{ if not (in (string .Site.BaseURL) "localhost") }}
+    {{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
+
+<script src={{ "/js/ramium.js" | relURL }}></script>
+<link rel="stylesheet" href={{ "/css/ramium.css" | relURL }}>
+
+{{ if or .Params.math .Site.Params.math }}
+{{ partial "math.html" . }}
+{{ end }}

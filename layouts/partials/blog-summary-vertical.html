@@ -1,0 +1,44 @@
+<a href="{{ .RelPermalink }}" class="summary-vertical">
+
+    <article class="media">
+        <figure class="media-left">
+            <div class="image is-128x128">
+                <!-- <div class="image is-4by3"> -->
+                {{ with .Params.image }}
+                <img src="{{ . | relURL }}">
+                {{ else }}
+                <img src="{{ "/image/default.jpeg" | relURL }}">
+                {{ end }}
+            </div>
+        </figure>
+
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    <strong>{{ .Title }}</strong>
+                    <small>
+                        {{- .Date.Format "Jan 2, 2006" }}
+                        {{ $time := math.Round (div (countwords .Content) 220.0) }}
+                        {{- if le $time 1 -}}
+                        (1 min read)
+                        {{- else -}}
+                        ({{ $time }} mins read)
+                        {{- end -}}
+                    </small>
+                    <br>
+                    <p>{{ .Summary }}</p>
+                </p>
+            </div>
+            <nav class="level is-mobile">
+                <div class="level-left">
+                    <!-- <a class="level-item">
+                <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                </a> -->
+                </div>
+            </nav>
+        </div>
+        <div class="media-right">
+            <!-- <button class="delete"></button> -->
+        </div>
+    </article>
+</a>

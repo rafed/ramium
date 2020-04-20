@@ -1,0 +1,61 @@
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href={{ "/" | relURL }}>
+      {{ with .Site.Title }}
+      <strong>{{ . }} </strong>
+      {{ end }}
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      {{ range .Site.Menus.main }}
+      {{ if .HasChildren }}
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">{{- .Name -}}</a>
+        <div class="navbar-dropdown">
+          {{ range .Children }}
+          <a class="navbar-item" href="{{ .URL }}">
+            {{- .Name -}}
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      {{ else }}
+      <a class="navbar-item" href="{{ .URL }}">
+        {{- .Name -}}
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+
+    {{ with .Site.Params.GoogleSearch }}
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <form id="cse-search-box-form-id" onsubmit="return executeQuery();" role="search">
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input id="cse-search-input-box-id" size=15 class="input" type="text" autocomplete="off"
+                placeholder="&#xf1a0; Google search" style="font-family:Arial, FontAwesome">
+            </div>
+
+            <div class="control">
+              <button type="submit" class="button is-black">
+                <i class="fa fa-search"></i>
+                </a>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</nav>

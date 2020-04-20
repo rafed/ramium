@@ -1,0 +1,2 @@
+{{/* $filteredPosts := where (where .Site.Pages "Type" "blog") "UniqueID" "!= ".UniqueID }}
+{{ $relatedPosts := shuffle $filteredPosts | first 3 */}}

@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+<div class="content">
+    <h1 class="title is-3">{{ .Title | humanize | title }}</h1>
+</div>
+
+{{ range .Paginator.Pages.ByPublishDate }}
+{{- partial "blog-brief.html" . -}}
+{{ end }}
+
+{{ end }}

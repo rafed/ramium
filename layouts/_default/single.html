@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+<div class="content blog">
+    <h1 class="title is-3">{{ .Title | title }}</h1>
+
+    <div id="infobar" class="level is-mobile">
+        <div class="level-left">
+            {{ if or .Params.showDate .Site.Params.showDate }}
+            <div class="level-item">
+                <p class="subtitle info">
+                    {{- .Date.Format "Jan 2, 2006" }}
+                </p>
+            </div>
+            {{ end }}
+
+            <div class="level-item">
+                <p class="subtitle info">
+                    {{ partial "time-to-read.html" . }}
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            <div class="tags">
+                {{ range .Params.tags }}
+                <a class="tag is-dark is-rounded" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | humanize }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <div class="tags is-hidden-desktop">
+        {{ range .Params.tags }}
+        <a class="tag is-dark is-rounded" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | humanize }}</a>
+        {{ end }}
+    </div>
+
+    <div class="blog-text">
+        {{ with .Params.image }}
+        <img src="{{ . | relURL }}">
+        {{ end }}
+
+        {{ .Content }}
+    </div>
+</div>
+
+{{- partial "social-media-share.html" -}}
+<br>
+{{ template "_internal/disqus.html" }}
+<!-- {{ partial "disqus.html" . }} -->
+
+{{ end }}

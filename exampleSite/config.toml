@@ -1,0 +1,65 @@
+baseURL = "https://rafed.github.io/ramium/"
+#CanonifyURLs=true
+
+languageCode = "en-us"
+theme = "ramium"
+
+title = "Ramium"
+disqusShortname = "rafed123"
+googleAnalytics = "googra"
+summaryLength = 40
+pluralizeListTitles = false
+enableemoji = false
+
+[params]
+    description = "A description for the meta tag of the site"
+    googleSearch = "000151824860492892407:kd5zijxwj6a"
+    showDate = true # make false if dont want to show date
+    math = false # best to enable this in the front matter of a page
+
+    tagsInHome = 40
+    sectionsInHome = 5
+    paginatePostsPerPage = 5
+    paginateTagsPerPage = 6
+
+[taxonomies]
+    tag = "tags"
+
+[markup.goldmark.renderer]
+    unsafe = true
+
+[menu]
+    [[menu.main]]
+        name = "Home"
+        url = "/"
+        weight = 1
+
+    [[menu.main]]
+        identifier = "blog"
+        name = "This Blog"
+        weight = 2
+            [[menu.main]]
+                parent = "blog"
+                name = "All Tags"
+                url = "/tags/"
+                weight = 1
+            [[menu.main]]
+                parent = "blog"
+                name = "All Sections"
+                url = "/sections/"
+                weight = 2
+            [[menu.main]]
+                parent = "blog"
+                name = "All Posts"
+                url = "/posts/"
+                weight = 3
+    
+    [[menu.main]]
+        name = "Author"
+        url = "/author/"
+        weight = 3
+
+[permalinks]
+    posts = "/:section/:title/"
+    getting-started-with-ramium = "/:section/:title/"
+    introduction-to-ramium = "/:section/:title/"
