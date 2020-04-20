@@ -7,6 +7,8 @@
 # git commit --allow-empty -m "Initializing gh-pages branch"
 # git push origin gh-pages
 # git checkout master
+# rm -rf public (na holeo hobe)
+# git worktree add -B gh-pages public upstream/gh-pages
 
 if [ "`git status -s`" ]
 then
