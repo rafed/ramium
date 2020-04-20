@@ -1,0 +1,89 @@
+{{ define "main" }}
+
+<div class="content">
+    <h1 class="title">Admin Panel</h1>
+
+    {{ $total_articles := len (where .Site.RegularPages "Section" "not in" "Addons") }}
+    {{ $total_tags := len ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
+    {{ $total_sections := len (where .Site.Sections "Title" "not in" "Posts Addons") }}
+
+    <section class="hero is-small has-text-centered">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-3">Total articles:</h1>
+                <h1 class="subtitle is-2">{{ $total_articles }}</h1>
+            </div>
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-4">Total tags:</h1>
+                <h1 class="subtitle is-3">{{ $total_tags  }}</h1>
+            </div>
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-4">Total sections:</h1>
+                <h1 class="subtitle is-3">{{ $total_sections }}</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="content">
+            <h2>Sections Summary</h2>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Section</th>
+                    <th>Total articles</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    {{ $postsLen := len (where .Site.RegularPages ".Section" "==" "posts") }}
+                    <td><a href="{{ "/posts/" | relURL }}">Posts</a></td>
+                    <td>{{ $postsLen }}</td>
+                </tr>
+
+                {{ $counter := 2}}
+                {{ range where .Site.Sections.ByTitle ".Title" "not in" "Posts Addons"}}
+                {{ $pages_len := len (where .Site.RegularPages ".Section" "==" (.Title | lower) )}}
+                <tr>
+                    <td>{{ $counter }}</td>
+                    {{ $counter = add $counter 1}}
+                    <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+                    <td>{{ $pages_len }}</td>
+                </tr>
+                {{ end }}
+
+                <tr id="admin-table-summary">
+                    <td></td>
+                    <td>Total</td>
+                    <td>{{ $total_articles }}</td>
+                </tr>
+
+            </table>
+
+            <h2>Tags Summary</h2>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Tags</th>
+                    <th>Total articles</th>
+                </tr>
+                {{ $counter := 1}}
+                {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                <tr>
+                    <td>{{ $counter }}</td>
+                    {{ $counter = add $counter 1}}
+                    <td><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></td>
+                    <td>{{ len $taxonomy }}</td>
+                </tr>
+                {{ end }}
+            </table>
+
+        </div>
+    </section>
+</div>
+
+
+{{ end }}

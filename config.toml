@@ -1,15 +1,12 @@
 baseURL = "https://rafed.github.io/ramium/"
-#RelativeURLs=true
 #CanonifyURLs=true
 
 languageCode = "en-us"
 theme = "ramium"
-assetDir = "static"
 
 title = "Ramium"
 disqusShortname = "rafed123"
 googleAnalytics = "googra"
-
 summaryLength = 40
 pluralizeListTitles = false
 enableemoji = false
@@ -17,17 +14,19 @@ enableemoji = false
 [params]
     description = "A description for the meta tag of the site"
     googleSearch = "000151824860492892407:kd5zijxwj6a"
-    math = false #best to enable this in a page
-    showDate = true #make false if dont want to show date
+    showDate = true # make false if dont want to show date
+    math = false # best to enable this in the front matter of a page
 
-    tagsInHome = 6
+    tagsInHome = 40
     sectionsInHome = 5
     paginatePostsPerPage = 5
-    paginateTagsPerPage = 4
-    paginateSectionsPerPage = 2
+    paginateTagsPerPage = 6
 
 [taxonomies]
     tag = "tags"
+
+[markup.goldmark.renderer]
+    unsafe = true
 
 [menu]
     [[menu.main]]
@@ -60,6 +59,7 @@ enableemoji = false
         url = "/author/"
         weight = 3
 
-[markup.goldmark.renderer]
-    unsafe= true
-
+[permalinks]
+    posts = "/:section/:title/"
+    getting-started-with-ramium = "/:section/:title/"
+    introduction-to-ramium = "/:section/:title/"

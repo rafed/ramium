@@ -20,57 +20,68 @@
     </div>
 </section>
 
-<section class="section has-text-centered">
-    <div class="content">
-        <a href="{{ "/tags/" | relURL }}">
-            <h1>Read articles by tags</h1>
-        </a>
-        <p class="tags-summary">
-            {{ $randTags := (slice)}}
-            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-            {{ $randTags = $randTags | append $name }}
-            {{ end }}
-            {{ $randTags = sort (first .Site.Params.TagsInHome (shuffle $randTags)) }}
-
-            {{ range $name := $randTags }}
-            <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">
-                <span class="tag is-dark is-large is-rounded">
-                    {{ $name | humanize }}
-                </span>
+<div class="columns is-centered has-text-centered">
+    <div class="column is-10">
+        <div class="content">
+            <a href="{{ "/tags/" | relURL }}">
+                <h1>Read articles by tags</h1>
             </a>
-            {{ end }}
-        </p>
-    </div>
-</section>
+            <p class="tags-summary">
+                {{ $randTags := (slice)}}
+                {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                {{ $randTags = $randTags | append $name }}
+                {{ end }}
+                {{ $randTags = sort (first .Site.Params.TagsInHome (shuffle $randTags)) }}
 
-<section class="section has-text-centered">
-    <div class="content">
-        <a href="{{ "/sections/" | relURL }}">
-            <h1>Sections</h1>
-        </a>
-        <p class="tags-summary">
-            {{ $randSections := shuffle (where .Site.Sections ".Title" "not in" "Posts Sections") }}
-            {{ range sort (first .Site.Params.SectionsInHome $randSections) "Title" }}
-            <a href="{{ .RelPermalink }}">
-                <span class="tag is-dark is-large">
-                    {{ .Title }}
-                </span>
-            </a>
-            {{ end }}
-        </p>
+                {{ range $name := $randTags }}
+                <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">
+                    <span class="tag is-dark is-large is-rounded">
+                        {{ $name | humanize }}
+                    </span>
+                </a>
+                {{ end }}
+            </p>
+        </div>
     </div>
-</section>
+</div>
+
+<div class="columns is-centered has-text-centered">
+    <div class="column is-10">
+        <div class="content">
+            <a href="{{ "/sections/" | relURL }}">
+                <h1>Sections</h1>
+            </a>
+            <p class="tags-summary">
+                {{ $randSections := shuffle (where .Site.Sections ".Title" "not in" "Posts Addons") }}
+                {{ range sort (first .Site.Params.SectionsInHome $randSections) "Title" }}
+                <a href="{{ .RelPermalink }}">
+                    <span class="tag is-dark is-large">
+                        {{ .Title | humanize | title }}
+                    </span>
+                </a>
+                {{ end }}
+            </p>
+        </div>
+    </div>
+</div>
+
 
 <div class="columns is-centered">
     <div class="column is-7">
         <div class="content">
             <a href="{{ "/posts/" | relURL }}">
-                <h1 class="is-3">Latest posts</h1>
+                <h1 class="is-3">Recent posts</h1>
             </a>
         </div>
-        {{ range first 5 (where .Site.RegularPages.ByPublishDate.Reverse ".Section" "!=" "Sections") }}
+        {{ range first 5 (where .Site.RegularPages.ByPublishDate.Reverse ".Section" "!=" "Addons") }}
         {{- partial "blog-brief.html" . -}}
         {{ end }}
+
+        <div class="content">
+            <a href="{{ "/posts/" | relURL }}">
+                <h4 class="has-text-centered seeall">See all</h4>
+            </a>
+        </div>
     </div>
 </div>
 
