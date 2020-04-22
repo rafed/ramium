@@ -5,15 +5,15 @@ languageCode = "en-us"
 theme = "ramium"
 
 title = "Ramium"
-disqusShortname = "
-googleAnalytics = 
+disqusShortname = ""
+googleAnalytics = ""
 summaryLength = 40
 pluralizeListTitles = false
 enableemoji = false
 
 [params]
     description = "A description for the meta tag of the site"
-    googleSearch = 
+    googleSearch = ""
     showDate = true # make false if dont want to show date
     math = false # best to enable this in the front matter of a page
     githubLink = "rafed/ramium/"
