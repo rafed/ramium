@@ -9,6 +9,7 @@ Copy
     static/ -> examplesite
     images/
     README.md
+    LICENSE
 
     themes/
         archetypes/
