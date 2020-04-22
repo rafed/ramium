@@ -31,6 +31,10 @@
 <script src={{ "/js/ramium.js" | relURL }}></script>
 <link rel="stylesheet" href={{ "/css/ramium.css" | relURL }}>
 
+{{ if .Params.chordsheet }}
+<link rel="stylesheet" href={{ "/css/chordsheet.css" | relURL }}>
+{{ end }}
+
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{ end }}

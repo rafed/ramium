@@ -8,8 +8,9 @@
 
         {{ $sections := where .Site.Sections.ByTitle ".Title" "not in" "Posts Addons" }}
         {{ range $i, $e := $sections }}
+
         <a href="{{ $e.RelPermalink }}">
-            <h1 class="title is-4"> {{ add $i 1 }}. {{ $e.Title | humanize | title }}</h1>
+            <p class="subtitle is-4"> {{ add $i 1 }}. {{ $e.Title | humanize | title }}</p>
         </a>
         {{ end }}
     </div>

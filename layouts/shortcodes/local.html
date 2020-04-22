@@ -1,0 +1,3 @@
+{{ if .IsNamedParams }}
+<a href="{{.Get "href" | relURL }}">{{.Get "text" }}</a>
+{{ end }}

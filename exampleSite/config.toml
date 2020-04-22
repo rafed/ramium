@@ -1,21 +1,22 @@
-baseURL = "https://rafed.github.io/ramium/"
+baseURL = "https://example.com/"
 #CanonifyURLs=true
 
 languageCode = "en-us"
 theme = "ramium"
 
 title = "Ramium"
-disqusShortname = "rafed123"
-googleAnalytics = "googra"
+disqusShortname = "
+googleAnalytics = 
 summaryLength = 40
 pluralizeListTitles = false
 enableemoji = false
 
 [params]
     description = "A description for the meta tag of the site"
-    googleSearch = "000151824860492892407:kd5zijxwj6a"
+    googleSearch = 
     showDate = true # make false if dont want to show date
     math = false # best to enable this in the front matter of a page
+    githubLink = "rafed/ramium/"
 
     tagsInHome = 40
     sectionsInHome = 5

@@ -1,0 +1,26 @@
+.chord-sheet h1 {
+    color:red;
+}
+
+.chord-sheet .row {
+    margin-bottom: 0.5em;
+}
+
+.chord-sheet .column {
+    display: inline-block;
+    padding: 0;
+    margin-right: 0.5em;
+}
+
+.chord-sheet .chord {
+    color: rgb(0, 0, 180);
+    font-weight: 600;
+}
+
+.chord-sheet .lyrics {
+    font-size: 0.9em;
+}
+
+.chord-sheet .paragraph {
+    margin-bottom: 3em;
+}

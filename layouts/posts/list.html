@@ -4,7 +4,7 @@
     <h1 class="title is-3">{{ .Title }}</h1>
 </div>
 
-{{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse ".Section" "!=" "addons") .Site.Params.PaginatePostsPerPage }}
+{{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse ".Section" "not in" "addons") .Site.Params.PaginatePostsPerPage }}
 {{ range $paginator.Pages }}
 {{- partial "blog-brief.html" . -}}
 {{ end }}
