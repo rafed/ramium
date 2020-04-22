@@ -1,8 +1,7 @@
 # Ramium
 A modern hugo theme for awesome blogs
 
-![thumbnail](https://github.com/rafed/ramium/blob/master/tn.png?raw=true)
-
+![thumbnail](https://github.com/rafed/ramium/blob/master/images/tn.png?raw=true)
 
 ## Features
 
@@ -13,7 +12,7 @@ A modern hugo theme for awesome blogs
 - Social sharing bar (facebook, twitter, reddit)
 - Comments with Disqus
 - Customizable navbar
-- {{<local href="/admin" text="Admin panel">}} (Not a real admin panel though. It simply shows the summary of the total number of posts, tags and sections)
+- Admin panel (Not a real admin panel though. It simply shows the summary of the total number of posts, tags and sections)
 - Mobile responsive- works great across desktops, tablets and mobiles
 - SEO friendly (Opengraph, Twitter cards)
 
