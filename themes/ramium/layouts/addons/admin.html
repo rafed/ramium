@@ -3,7 +3,7 @@
 <div class="content">
     <h1 class="title">Admin Panel</h1>
 
-    {{ $total_articles := len (where .Site.RegularPages "Section" "not in" "Addons") }}
+    {{ $total_articles := len (where .Site.RegularPages "Section" "not in" "addons") }}
     {{ $total_tags := len ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
     {{ $total_sections := len (where .Site.Sections "Title" "not in" "Posts Addons") }}
 
@@ -81,9 +81,17 @@
                 {{ end }}
             </table>
 
+            {{ $drafts := where .Site.RegularPages ".Draft" "==" true }}
+            {{ if $drafts }}
+            <h2>Drafted summary</h2>
+            <ol>
+                {{ range $drafts }}
+                <li>{{ .Title }}</li>
+                {{ end }}
+            </ol>
+            {{ end }}
         </div>
     </section>
 </div>
-
 
 {{ end }}

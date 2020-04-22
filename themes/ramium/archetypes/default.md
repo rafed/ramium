@@ -1,14 +1,15 @@
 ---
 title: {{ replace .Name "-" " " | title }}
 date: {{ now.Format "2006-01-2" }}
-description: Delete if not needed
 tags: [tag1, tag2]
-draft: true
 image: "/image/blog-pic.jpg"
 ---
 
 Article goes here. 
 
-In front matter:
-    Put showDate = true/false to enable/disable showing dates
-    Put math: true to enable showing equations
+For other options, put these in the front matter:
+    description:            "A description" other than the blog intro
+    draft: true             to not publish article yet
+    showDate: true/false    to enable/disable showing dates
+    math: true              to enable showing equations (katex)
+    chordsheet: true        to add chordsheet styelsheet

@@ -1,0 +1,4 @@
+Change about me target in navbar/config.toml
+Remove all variables from conig.toml
+Set baseurl to example.com
+Delete rafed.jpg

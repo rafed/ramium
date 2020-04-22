@@ -43,7 +43,11 @@
 
         <div>
             <a href="{{ .RelPermalink }}">
-                <p class="summary">{{ .Summary | plainify }}</p>
+                <p class="summary">
+                    {{ with .Description }}{{ . }}
+                    {{ else }}{{ with .Summary }}{{ . | plainify }}
+                    {{ end }}{{ end }}
+                </p>
             </a>
         </div>
     </div>
