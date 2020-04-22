@@ -1,4 +1,17 @@
-Change about me target in navbar/config.toml
-Remove all variables from conig.toml
 Set baseurl to example.com
+Remove all config values from conig.toml
+Change about me target in navbar/config.toml
 Delete rafed.jpg
+
+Copy
+    config.toml -> examplesite
+    content -> examplesite
+    static/ -> examplesite
+    images/
+    README.md
+
+    themes/
+        archetypes/
+        layouts/
+        static/
+        theme.toml
