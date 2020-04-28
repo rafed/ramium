@@ -3,13 +3,13 @@
 }
 
 .chord-sheet .row {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
 }
 
 .chord-sheet .column {
     display: inline-block;
     padding: 0;
-    margin-right: 0.5em;
+    margin-right: 0.3em;
 }
 
 .chord-sheet .chord {

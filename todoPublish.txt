@@ -1,7 +1,9 @@
 Set baseurl to example.com
-Remove all config values from conig.toml
+Remove all config values from config.toml
+Remove permalinks in config.toml
 Change about me target in navbar/config.toml
 Delete rafed.jpg
+Remove authorRa.md
 
 Copy
     config.toml -> examplesite

@@ -12,7 +12,7 @@ input:focus::placeholder {
 /******* HOME PAGE *******/
 
 .tags-summary  {
-    line-height: 2.7;
+    line-height: 3;
 }
 
 #title-banner {
@@ -54,15 +54,27 @@ input:focus::placeholder {
     font-size: 0.9em;
 }
 
-h1.title.is-3 {
-    margin-bottom: 0.4em;
-}
-
 @media all and (max-width: 1023px) {
     #infobar {
         margin-bottom: 0.5em;
     }
 }
+
+.blog .date {
+    font-weight: 500;
+}
+
+.blog .title {
+    font-size: 2.1em;
+    margin-bottom: 0.5em;
+}
+
+.blog-text h1 {font-size: 1.75em;}
+.blog-text h2 {font-size: 1.5em;}
+.blog-text h3 {font-size: 1.25em;} 
+.blog-text h4 {font-size: 1.125em;}
+.blog-text h5 {font-size: 1em;}
+.blog-text h6 {font-size: 0.9em;}
 
 .blog-text {
     font-size: 1.2em;
@@ -166,7 +178,7 @@ h1.title.is-3 {
 /**************/
 
 .sections-list p {
-    line-height: 1.5em;
+    line-height: 1.7em;
 }
 
 .sections-list a:hover {

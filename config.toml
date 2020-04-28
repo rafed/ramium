@@ -6,7 +6,7 @@ theme = "ramium"
 
 title = "Ramium"
 disqusShortname = "rafed"
-googleAnalytics = "googra"
+googleAnalytics = "UA-106132552-5"
 summaryLength = 40
 pluralizeListTitles = false
 enableemoji = false
