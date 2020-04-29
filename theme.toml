@@ -7,15 +7,9 @@ licenselink = "https://github.com/rafed/ramium/blob/master/LICENSE"
 description = "A modern hugo theme for awesome blogs"
 homepage = "http://rafed.github.io/ramium/"
 tags = ["blog", "responsive", "google analytics", "disqus"]
-features = ["chordsheetjs", "admin panel", "social media share"]
-min_version = "0.572"
+features = ["chordsheetjs", "admin panel", "social media share", "math equations"]
+min_version = "0.57.2"
 
 [author]
   name = "Rafed Muhammad Yasir"
-  homepage = "rafed.github.io/"
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  homepage = "https://rafed.github.io/"

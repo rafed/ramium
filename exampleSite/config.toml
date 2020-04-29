@@ -1,4 +1,4 @@
-baseURL = "https://example.com/"
+baseURL = "https://example.com"
 #CanonifyURLs=true
 
 languageCode = "en-us"
@@ -59,8 +59,3 @@ enableemoji = false
         name = "Author"
         url = "/author/"
         weight = 3
-
-[permalinks]
-    posts = "/:section/:title/"
-    getting-started-with-ramium = "/:section/:title/"
-    introduction-to-ramium = "/:section/:title/"

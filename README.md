@@ -12,18 +12,24 @@ A modern hugo theme for awesome blogs
 - Social sharing bar (facebook, twitter, reddit)
 - Comments with Disqus
 - Customizable navbar
-- Admin panel (Not a real admin panel though. It simply shows the summary of the total number of posts, tags and sections)
+- {{<local href="/admin" text="Admin panel">}} (Not a real admin panel though. It simply shows the summary of the total number of posts, tags and sections)
 - Mobile responsive- works great across desktops, tablets and mobiles
 - SEO friendly (Opengraph, Twitter cards)
 
 #### Blogging features
 
-- Attractive landing page with navigation links everywhere
+- Attractive landing page with article/tag links everywhere
 - Add featured images to posts
-- Add code snippets
-- Add tags to articles and lislt articles by tags
 - Making sections for related articles (for example tutorials on a topic)
+- Add code snippets
+- Add math equations
+- Add tags to articles and list articles by tags
 - Add chord to lyrics (CSS style for [ChordSheetJs](https://github.com/martijnversluis/ChordSheetJS))
+
+#### Future plans
+- Google adsense
+- Suggestions for reading more articles at the end of an article
+- Support for facebook comments
 
 ## Installation & Update
 
@@ -53,15 +59,15 @@ languageCode = "en-us"
 theme = "ramium"
 
 title = "Ramium"
-disqusShortname = "rafed"
-googleAnalytics = "googra"
+disqusShortname = "disqus-code"
+googleAnalytics = "analytics-code"
 summaryLength = 40
 pluralizeListTitles = false
 enableemoji = false
 
 [params]
     description = "A description for the meta tag of the site"
-    googleSearch = "google-search-key"
+    googleSearch = "google-search-code"
     showDate = true # make false if dont want to show date
     math = false # best to enable this in the front matter of a page
     githubLink = "rafed/ramium/"

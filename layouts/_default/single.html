@@ -1,13 +1,13 @@
 {{ define "main" }}
 
 <div class="content blog">
-    <h1 class="title is-3">{{ .Title | title }}</h1>
+    <h1 class="title">{{ .Title | title }}</h1>
 
     <div id="infobar" class="level is-mobile">
         <div class="level-left">
             {{ if or .Params.showDate .Site.Params.showDate }}
             <div class="level-item">
-                <p class="subtitle info">
+                <p class="subtitle info date">
                     {{- .Date.Format "Jan 2, 2006" }}
                 </p>
             </div>
@@ -43,8 +43,8 @@
     </div>
 </div>
 
-{{- partial "social-media-share.html" -}}
+{{- partial "social-media-share.html" . -}}
 <br>
-{{ partial "disqus.html" . }}
+{{ partial "disqus.html" }}
 
 {{ end }}
