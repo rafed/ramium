@@ -12,7 +12,7 @@ A modern hugo theme for awesome blogs
 - Social sharing bar (facebook, twitter, reddit)
 - Comments with Disqus
 - Customizable navbar
-- {{<local href="/admin" text="Admin panel">}} (Not a real admin panel though. It simply shows the summary of the total number of posts, tags and sections)
+- Admin panel (Not a real admin panel though. It simply shows the summary of the total number of posts, tags and sections)
 - Mobile responsive- works great across desktops, tablets and mobiles
 - SEO friendly (Opengraph, Twitter cards)
 
@@ -113,11 +113,6 @@ enableemoji = false
         name = "Author"
         url = "/authorr/"
         weight = 3
-
-[permalinks]
-    posts = "/:section/:title/"
-    getting-started-with-ramium = "/:section/:title/"
-    introduction-to-ramium = "/:section/:title/"
 ```
 
 ## Frontmatter example
