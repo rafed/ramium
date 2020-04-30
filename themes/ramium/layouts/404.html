@@ -80,7 +80,7 @@
                 <h1 class="is-3">Recent posts</h1>
             </a>
         </div>
-        {{ range first 5 (where .Site.RegularPages.ByPublishDate.Reverse ".Section" "!=" "Addons") }}
+        {{ range first 5 (where .Site.RegularPages.ByPublishDate.Reverse ".Section" "not in" "addons") }}
         {{- partial "blog-brief.html" . -}}
         {{ end }}
 
