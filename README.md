@@ -47,7 +47,7 @@ If you want to know more information, see [Hugo doc](https://gohugo.io/themes/in
 
 ## Usage
 
-When you manually create files by following [quick start (step4)](https://gohugo.io/getting-started/quick-start/#step-4-add-some-content), you should command `hugo new posts/<filename>.md` instead of `hugo new posts/<filename>.md`.
+When you manually create files by following [quick start (step4)](https://gohugo.io/getting-started/quick-start/#step-4-add-some-content), you should command `hugo new posts/<filename>.md` instead of `hugo new post/<filename>.md`.
 
 #### `config.toml` example
 
