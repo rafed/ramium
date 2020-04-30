@@ -13,12 +13,13 @@
 }
 
 .chord-sheet .chord {
-    color: rgb(0, 0, 180);
+    color: rgb(0, 0, 177);
     font-weight: 600;
 }
 
 .chord-sheet .lyrics {
     font-size: 0.9em;
+    font-weight: 400;
 }
 
 .chord-sheet .paragraph {
