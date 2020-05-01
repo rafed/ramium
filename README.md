@@ -47,7 +47,10 @@ If you want to know more information, see [Hugo doc](https://gohugo.io/themes/in
 
 ## Usage
 
-When you manually create files by following [quick start (step4)](https://gohugo.io/getting-started/quick-start/#step-4-add-some-content), you should command `hugo new posts/<filename>.md` instead of `hugo new post/<filename>.md`.
+1. Make sure you follow the template structure of the examplesite (including the config.toml)
+2. When you manually create files by following [quick start (step4)](https://gohugo.io/getting-started/quick-start/#step-4-add-some-content), you should command `hugo new posts/<filename>.md` instead of `hugo new post/<filename>.md`.
+3. For the admin panel, sections list and author page to work the 'addons' directory must not be deleted.
+4. Detailed instructions are coming soon [here](https://themes.gohugo.io/theme/ramium/getting-started-with-ramium/).
 
 #### `config.toml` example
 
