@@ -16,7 +16,7 @@ enableemoji = false
     googleSearch = ""
     showDate = true # make false if dont want to show date
     math = false # best to enable this in the front matter of a page
-    githubLink = "rafed/ramium/"
+    githubProfile = "rafed/ramium/"
 
     tagsInHome = 40
     sectionsInHome = 5
