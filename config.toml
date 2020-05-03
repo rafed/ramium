@@ -6,7 +6,7 @@ theme = "ramium"
 
 title = "Ramium"
 disqusShortname = "rafed"
-googleAnalytics = "UA-106132552-5"
+googleAnalytics = "UA-106132552-1"
 pluralizeListTitles = false
 enableemoji = false
 
@@ -15,7 +15,7 @@ enableemoji = false
     googleSearch = "000151824860492892407:kd5zijxwj6a"
     showDate = true # make false if dont want to show date for evergeen articles
     math = false # best to enable this in the front matter of a page
-    githubLink = "rafed/ramium/"
+    githubProfile = "rafed/ramium/"
 
     tagsInHome = 40     # set zero to not show in home page
     sectionsInHome = 5  # set zero to not show in home page
