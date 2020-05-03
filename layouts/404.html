@@ -14,82 +14,20 @@
                 Here's what may have happened:
             </h1>
             <h1 class="subtitle is-6">
-                1. The page does not exist
+                1. The page was moved to another location. You can search for it above.
             </h1>
             <h1 class="subtitle is-6">
-                2. The page was moved to another location. Use the search bar above
+                2. The page was removed. You can read another one from below.
             </h1>
             <h1 class="subtitle is-6">
-                3. The content was removed. Read an article from below.
+                3. This page never existed
             </h1>
         </div>
     </div>
 </section>
 
-<div class="columns is-centered has-text-centered">
-    <div class="column is-10">
-        <div class="content">
-            <a href="{{ "/tags/" | relURL }}">
-                <h1>Read articles by tags</h1>
-            </a>
-            <p class="tags-summary">
-                {{ $randTags := (slice)}}
-                {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                {{ $randTags = $randTags | append $name }}
-                {{ end }}
-                {{ $randTags = sort (first .Site.Params.TagsInHome (shuffle $randTags)) }}
-
-                {{ range $name := $randTags }}
-                <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">
-                    <span class="tag is-dark is-large is-rounded">
-                        {{ $name | humanize }}
-                    </span>
-                </a>
-                {{ end }}
-            </p>
-        </div>
-    </div>
-</div>
-<br>
-
-<div class="columns is-centered has-text-centered">
-    <div class="column is-10">
-        <div class="content">
-            <a href="{{ "/sections/" | relURL }}">
-                <h1>Sections</h1>
-            </a>
-            <p class="tags-summary">
-                {{ $randSections := shuffle (where .Site.Sections ".Title" "not in" "Posts Addons") }}
-                {{ range sort (first .Site.Params.SectionsInHome $randSections) "Title" }}
-                <a href="{{ .RelPermalink }}">
-                    <span class="tag is-dark is-large">
-                        {{ .Title | humanize | title }}
-                    </span>
-                </a>
-                {{ end }}
-            </p>
-        </div>
-    </div>
-</div>
-<br>
-
-<div class="columns is-centered">
-    <div class="column is-7">
-        <div class="content">
-            <a href="{{ "/posts/" | relURL }}">
-                <h1 class="is-3">Recent posts</h1>
-            </a>
-        </div>
-        {{ range first 5 (where .Site.RegularPages.ByPublishDate.Reverse ".Section" "not in" "addons") }}
-        {{- partial "blog-brief.html" . -}}
-        {{ end }}
-
-        <div class="content">
-            <a href="{{ "/posts/" | relURL }}">
-                <h4 class="has-text-centered seeall">See all</h4>
-            </a>
-        </div>
-    </div>
-</div>
+{{- partial "index/tag-bullet.html" . -}}
+{{- partial "index/section-bullet.html" . -}}
+{{- partial "index/list-blog-brief.html" . -}}
 
 {{ end }}

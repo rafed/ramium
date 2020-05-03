@@ -1,0 +1,32 @@
+{{ if ne .Site.Params.TagsInHome 0 }}
+
+{{ $randTags := (slice)}}
+{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+{{ $randTags = $randTags | append $name }}
+{{ end }}
+{{ $randTags = sort (first .Site.Params.TagsInHome (shuffle $randTags)) }}
+
+{{ if gt (len $randTags) 1 }}
+
+<div class="columns is-centered has-text-centered">
+    <div class="column is-10">
+        <div class="content">
+            <a href="{{ "/tags/" | relURL }}">
+                <h1>Read articles by tags</h1>
+            </a>
+            <p class="tags-summary">
+                {{ range $name := $randTags }}
+                <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">
+                    <span class="tag is-dark is-large is-rounded">
+                        {{ $name | humanize }}
+                    </span>
+                </a>
+                {{ end }}
+            </p>
+        </div>
+    </div>
+</div>
+<br>
+
+{{ end }}
+{{ end }}

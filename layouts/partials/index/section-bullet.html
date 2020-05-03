@@ -1,0 +1,27 @@
+{{ if ne .Site.Params.SectionsInHome 0 }}
+
+{{ $randSections := shuffle (where .Site.Sections ".Title" "not in" "Posts Addons") }}
+{{ if gt (len $randSections) 1 }}
+
+<div class="columns is-centered has-text-centered">
+    <div class="column is-10">
+        <div class="content">
+            <a href="{{ "/sections/" | relURL }}">
+                <h1>Sections</h1>
+            </a>
+            <p class="tags-summary">
+                {{ range sort (first .Site.Params.SectionsInHome $randSections) "Title" }}
+                <a href="{{ .RelPermalink }}">
+                    <span class="tag is-dark is-large">
+                        {{ .Title | humanize | title }}
+                    </span>
+                </a>
+                {{ end }}
+            </p>
+        </div>
+    </div>
+</div>
+<br>
+
+{{ end }}
+{{ end }}

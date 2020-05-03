@@ -1,0 +1,18 @@
+<div class="columns is-centered">
+    <div class="column is-7">
+        <div class="content">
+            <a href="{{ "/posts/" | relURL }}">
+                <h1 class="is-3">Recent posts</h1>
+            </a>
+        </div>
+        {{ range first 5 (where .Site.RegularPages.ByPublishDate.Reverse ".Section" "not in" "addons") }}
+        {{- partial "blog-brief.html" . -}}
+        {{ end }}
+
+        <div class="content">
+            <a href="{{ "/posts/" | relURL }}">
+                <h4 class="has-text-centered seeall">See all</h4>
+            </a>
+        </div>
+    </div>
+</div>
