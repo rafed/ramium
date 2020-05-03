@@ -7,19 +7,18 @@ theme = "ramium"
 title = "Ramium"
 disqusShortname = "rafed"
 googleAnalytics = "UA-106132552-5"
-summaryLength = 40
 pluralizeListTitles = false
 enableemoji = false
 
 [params]
     description = "A description for the meta tag of the site"
     googleSearch = "000151824860492892407:kd5zijxwj6a"
-    showDate = true # make false if dont want to show date
+    showDate = true # make false if dont want to show date for evergeen articles
     math = false # best to enable this in the front matter of a page
     githubLink = "rafed/ramium/"
 
-    tagsInHome = 40
-    sectionsInHome = 5
+    tagsInHome = 40     # set zero to not show in home page
+    sectionsInHome = 5  # set zero to not show in home page
     paginatePostsPerPage = 5
     paginateTagsPerPage = 6
 
