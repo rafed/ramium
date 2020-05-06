@@ -18,7 +18,7 @@
                 {{ range $name := $randTags }}
                 <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">
                     <span class="tag is-dark is-large is-rounded">
-                        {{ $name | humanize }}
+                        {{ $name | title }}
                     </span>
                 </a>
                 {{ end }}
