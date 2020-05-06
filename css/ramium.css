@@ -1,3 +1,6 @@
+body {
+    font-family: sans-serif;
+}
 
 /******* navbar ****/
 
@@ -15,10 +18,6 @@ input:focus::placeholder {
     line-height: 3;
 }
 
-#title-banner {
-    font-size: 120px;
-}
-
 .seeall {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -27,6 +26,7 @@ input:focus::placeholder {
 
 .seeall:hover {
     background-color: rgb(187, 187, 187);
+    text-decoration: underline;
 }
 
 @media all and (max-width: 768px) {
@@ -78,8 +78,7 @@ input:focus::placeholder {
 
 .blog-text {
     font-size: 1.2em;
-    color: rgba(0, 0, 0, 0.84);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgba(0, 0, 0, 0.82);
     line-height: 1.7;
     margin-top: 1.8em;
 }
@@ -90,6 +89,15 @@ input:focus::placeholder {
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+
+.blog .blog-text p {
+    margin-bottom: 1.5em;
+}
+
+/* For margin below videos */
+.blog-text div { 
     margin-bottom: 1em;
 }
 
@@ -106,10 +114,10 @@ input:focus::placeholder {
 
 /* ----- BLOG BRIEF ------- */
 
-.blog-brief .is-4 {
+.blog-brief h3 {
     margin-bottom: 0.3em;
 }
-.blog-brief .is-4:hover {
+.blog-brief h3:hover {
     text-decoration: underline;
 }
 
@@ -124,8 +132,7 @@ input:focus::placeholder {
 .blog-brief .summary {
     color: black;
     opacity: 0.84;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.2em;
 
     overflow: hidden;
     max-height: 4.4em;
