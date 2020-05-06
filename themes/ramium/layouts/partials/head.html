@@ -1,6 +1,6 @@
 <title>
     {{- if not .IsHome }}
-    {{ with .Title }}{{ . }} | {{ end }}
+    {{ with .Title | title }}{{ . }} | {{ end }}
     {{ end }}
     {{ .Site.Title -}}
 </title>

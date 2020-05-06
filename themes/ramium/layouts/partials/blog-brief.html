@@ -29,7 +29,7 @@
         </div>
         <div class="level-right is-hidden-touch">
             {{ range .Params.tags }}
-            <a class="tag is-rounded" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | humanize }}</a>
+            <a class="tag is-rounded" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | title }}</a>
             {{ end }}
         </div>
     </div>
@@ -45,7 +45,7 @@
             <a href="{{ .RelPermalink }}">
                 <p class="summary">
                     {{ with .Description }}{{ . }}
-                    {{ else }}{{ with .Summary }}{{ . | plainify }}
+                    {{ else }}{{ with .Summary }}{{ . | plainify | htmlUnescape }}
                     {{ end }}{{ end }}
                 </p>
             </a>
