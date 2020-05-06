@@ -162,7 +162,7 @@ input:focus::placeholder {
 .continue-reading {
     clear: both;
     margin-top: 0.5em;
-    font-weight: 450;
+    font-weight: 600;
 }
 
 .continue-reading a {
