@@ -84,12 +84,12 @@ input:focus::placeholder {
 }
 
 .blog-text img {
-    max-width: 85%;
+    /* max-width: 85%; */
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: 1.5em;
+    /* margin-top: 1em;
+    margin-bottom: 1.5em; */
 }
 
 .blog .blog-text p {

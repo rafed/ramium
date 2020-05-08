@@ -36,7 +36,9 @@
 
     <div class="blog-text">
         {{ with .Params.image }}
-        <img src="{{ . | relURL }}">
+        <figure>
+            <img src="{{ . | relURL }}">
+        </figure>
         {{ end }}
 
         {{ .Content }}
