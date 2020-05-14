@@ -205,3 +205,12 @@ input:focus::placeholder {
 .cse .gsc-control-cse, .gsc-control-cse {
     padding: 0px;
 }
+
+/***** kbd tag style ****/
+
+kbd {
+    background-color: rgba(153, 159, 160, 0.329);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 4px;
+}
