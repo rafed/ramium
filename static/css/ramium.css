@@ -142,6 +142,7 @@ input:focus::placeholder {
 @media all and (min-width: 769px) { /*for large devices*/
     .blog-brief img {
         height: 5em;
+        max-width: 13em;
         float: left;       
         margin-right: 0.8em;
         display: block;
