@@ -8,11 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<meta name="description" 
-      content="{{- with .Description }}{{ . }}
-                {{ else }}{{ with .Summary }}{{ . }}
-                {{ else }}{{ .Site.Params.description }}
-                {{ end }}{{ end -}}">
+{{- partial "meta.html" . -}}
 
 <link rel="canonical" href="{{ .Permalink }}" />
 
@@ -21,11 +17,8 @@
 <link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | relURL }}">
 <link rel="stylesheet" href="{{ "/css/bulma.min.css" | relURL }}">
 
-{{ template "_internal/opengraph.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
-
 {{ if not (in (string .Site.BaseURL) "localhost") }}
-    {{ template "_internal/google_analytics_async.html" . }}
+{{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
 
 <script src={{ "/js/ramium.js" | relURL }}></script>
