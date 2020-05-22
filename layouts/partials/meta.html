@@ -1,4 +1,7 @@
-{{ if eq .Kind "taxonomy" }}
+{{ if .IsHome }}
+<meta name="description" content="{{ .Site.Params.Description }}">
+
+{{ else if eq .Kind "taxonomy" }}
 <meta name="description" content="List of all articles related to {{ .Title }}">
 
 {{ else if eq .Kind "taxonomyTerm" }}
