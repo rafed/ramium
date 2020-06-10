@@ -215,3 +215,8 @@ kbd {
     padding-right: 5px;
     border-radius: 4px;
 }
+
+/**** For codes ****/
+.highlight {
+    font-size: 0.9em;
+}
