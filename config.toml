@@ -13,6 +13,7 @@ enableemoji = false
 [params]
     description = "A description for the meta tag of the site"
     googleSearch = "000151824860492892407:kd5zijxwj6a"
+    adsense = "ca-pub-7125931910131040"
     showDate = true # make false if dont want to show date for evergeen articles
     math = false # best to enable this in the front matter of a page
     githubProfile = "rafed/ramium/"
