@@ -32,3 +32,6 @@
 {{ partial "math.html" . }}
 {{ end }}
 
+{{ if .Site.Params.adsense }}
+<script data-ad-client="{{ .Site.Params.adsense }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{{ end }}
