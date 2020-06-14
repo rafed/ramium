@@ -2,6 +2,10 @@
     color:red;
 }
 
+.chord-sheet {
+    line-height: 1.2em;
+}
+
 .chord-sheet .row {
     margin-bottom: 0.8em;
 }
