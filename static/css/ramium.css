@@ -101,9 +101,9 @@ input:focus::placeholder {
 }
 
 /* For margin below videos */
-.blog-text div { 
+/* .blog-text div { 
     margin-bottom: 1em;
-}
+} */
 
 #admin-table-summary {
     font-weight: bold;
