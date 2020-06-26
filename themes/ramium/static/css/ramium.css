@@ -92,8 +92,8 @@ input:focus::placeholder {
     margin-bottom: 1.5em; */
 }
 
-.blog .blog-text p {
-    margin-bottom: 1.5em;
+.blog .blog-text p+p {
+    margin-top: 1.5em;
 }
 
 .blog .blog-text li ol, .blog .blog-text li ul {
@@ -179,6 +179,10 @@ input:focus::placeholder {
     text-decoration: underline;
     color: black;
     opacity: 0.84;
+}
+
+.blog .blog-text blockquote p {
+    margin-bottom: 0px;
 }
 
 /***** BULMA FIX ******/
