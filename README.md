@@ -1,5 +1,6 @@
 # Ramium
-A modern hugo theme for awesome blogs
+
+A modern Hugo theme for awesome blogs
 
 ![thumbnail](https://github.com/rafed/ramium/blob/master/images/tn.png?raw=true)
 
@@ -27,9 +28,10 @@ A modern hugo theme for awesome blogs
 - Add chord to lyrics (CSS style for [ChordSheetJs](https://github.com/martijnversluis/ChordSheetJS))
 
 #### Future plans
-- Google adsense
+
+- Google Adsense
 - Suggestions for reading more articles at the end of an article
-- Support for facebook comments
+- Support for Facebook comments
 
 ## Installation & Update
 
@@ -113,7 +115,7 @@ enableemoji = false
     
     [[menu.main]]
         name = "Author"
-        url = "/authorr/"
+        url = "/author/"
         weight = 3
 ```
 
