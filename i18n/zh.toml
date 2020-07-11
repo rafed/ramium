@@ -1,0 +1,26 @@
+[ContinueReading]
+other = "继续阅读"
+
+[OneMinRead]
+other = "1 分钟前阅读"
+
+[MinsRead]
+other = "分钟前阅读"
+
+[Previous]
+other = "上一个"
+
+[NextPage]
+other = "下一页"
+
+[SeeAll]
+other = "查看全部"
+
+[RecentPosts]
+other = "最近发布"
+
+[Sections]
+other = "章节"
+
+[ReadArticlesByTags]
+other = "标签"

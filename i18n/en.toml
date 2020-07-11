@@ -1,0 +1,26 @@
+[ContinueReading]
+other = "Continue reading"
+
+[OneMinRead]
+other = "1 min read"
+
+[MinsRead]
+other = "mins read"
+
+[Previous]
+other = "Previous"
+
+[NextPage]
+other = "Next page"
+
+[SeeAll]
+other = "See all"
+
+[RecentPosts]
+other = "Recent posts"
+
+[Sections]
+other = "Sections"
+
+[ReadArticlesByTags]
+other = "Read articles by tags"

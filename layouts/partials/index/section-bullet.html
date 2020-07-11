@@ -7,7 +7,7 @@
     <div class="column is-10">
         <div class="content">
             <a href="{{ "/sections/" | relURL }}">
-                <h1>Sections</h1>
+                <h1>{{ i18n "Sections" }}</h1>
             </a>
             <p class="tags-summary">
                 {{ range sort (first .Site.Params.SectionsInHome $randSections) "Title" }}

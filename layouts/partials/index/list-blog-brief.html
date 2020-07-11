@@ -2,7 +2,7 @@
     <div class="column is-7">
         <div class="content">
             <a href="{{ "/posts/" | relURL }}">
-                <h1 class="is-3">Recent posts</h1>
+                <h1 class="is-3">{{ i18n "RecentPosts" }}</h1>
             </a>
         </div>
         {{ range first 5 (where .Site.RegularPages.ByPublishDate.Reverse ".Section" "not in" "addons") }}
@@ -11,7 +11,7 @@
 
         <div class="content">
             <a href="{{ "/posts/" | relURL }}">
-                <h4 class="has-text-centered seeall">See all</h4>
+                <h4 class="has-text-centered seeall">{{ i18n "SeeAll" }}</h4>
             </a>
         </div>
     </div>

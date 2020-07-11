@@ -56,15 +56,15 @@
     <nav class="pagination is-centered">
 
         {{ if $paginator.HasPrev }}
-            <a class="pagination-previous is-dark" href="{{ $paginator.Prev.URL }}">Previous</a>
+            <a class="pagination-previous is-dark" href="{{ $paginator.Prev.URL }}">{{ i18n "Previous"}}</a>
         {{ else }}
-            <a class="pagination-previous" disabled>Previous</a>
+            <a class="pagination-previous" disabled>{{ i18n "Previous"}}</a>
         {{ end }}
 
         {{ if $paginator.HasNext }}
-            <a class="pagination-next" href="{{ $paginator.Next.URL }}">Next page</a>
+            <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "NextPage"}}</a>
         {{ else }}
-            <a class="pagination-next" disabled>Next page</a>
+            <a class="pagination-next" disabled>{{ i18n "NextPage"}}</a>
         {{ end }}
 
 
