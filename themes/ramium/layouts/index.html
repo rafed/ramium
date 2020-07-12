@@ -1,21 +1,20 @@
 {{ define "main" }}
 
 <!-- is-fullheight-with-navbar is-bold is-light -->
-<section class="hero has-text-centered">
-    <br><br><br>
+<section class="hero has-text-centered is-medium">
     <div class="hero-body">
-        <div class="container">
-            <h1 class="title is-1">
+        <div class="container py-5">
+            <h1 class="title is-1 ">
                 {{ .Title }}
             </h1>
-            <h1 class="subtitle is-2">
+            <h1 class="subtitle is-3">
                 {{ .Params.Subtitle }}
             </h1>
-            <h1 class="subtitle is-5">
+            <!-- <h1 class="subtitle is-5">
                 {{ with .Content }}
                 {{ . }}
                 {{ end }}
-            </h1>
+            </h1> -->
         </div>
     </div>
 </section>

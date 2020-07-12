@@ -1,0 +1,237 @@
+$fa-font-path: "fonts";
+@import "font-awesome-4.7.0/scss/font-awesome.scss";
+
+$pagination-current-background-color: hsl(0, 0%, 21%);
+$pagination-focus-border-color: hsl(0, 0%, 21%);
+$pagination-current-border-color: hsl(0, 0%, 21%);
+
+@import "bulma/bulma.sass";
+
+body {
+    font-family: sans-serif;
+}
+
+/******* navbar ****/
+
+.navbar-brand a {
+    font-size: 20px;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+/******* HOME PAGE *******/
+
+.tags-summary  {
+    line-height: 3;
+}
+
+.seeall {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(214, 214, 214);
+}
+
+.seeall:hover {
+    background-color: rgb(187, 187, 187);
+    text-decoration: underline;
+}
+
+@media all and (max-width: 768px) {
+    #all-tags {
+        list-style-type: none;
+    }
+}
+
+@media all and (min-width: 769px) {
+    #all-tags {
+        columns: 2;
+        list-style-type: none;
+    }
+}
+
+/**** BLOG MAIN ********/
+
+#page-body {
+    margin-top: 2em;
+    min-height: 75vh;
+    position: relative;
+}
+
+.info {
+    font-size: 0.9em;
+}
+
+@media all and (max-width: 1023px) {
+    #infobar {
+        margin-bottom: 0.5em;
+    }
+}
+
+.blog {
+    .date {
+        font-weight: 600;
+    }
+
+    .blog-text {
+        font-size: 1.2em;
+        color: rgba(0, 0, 0, 0.82);
+        line-height: 1.7;
+        margin-top: 1.5em;
+        
+        p+p {
+            margin-top: 1.5em;
+        }
+
+        li ol, li ul {
+            margin-top: 0px;
+        }
+
+        h1 {font-size: 1.75em;}
+        h2 {font-size: 1.5em;}
+        h3 {font-size: 1.25em;} 
+        h4 {font-size: 1.125em;}
+        h5 {font-size: 1em;}
+        h6 {font-size: 0.9em;}
+    }
+
+    img {
+        /* max-width: 85%; */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-top: 1em;
+        margin-bottom: 1.5em; */
+    }
+
+    blockquote p {
+        margin-bottom: 0px;
+    }
+
+    kbd {
+        background-color: rgba(153, 159, 160, 0.329);
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 4px;
+    }
+
+    // For showing codes
+    .highlight {
+        font-size: 0.9em;
+    }
+}
+
+// .blog-text img {
+//     /* max-width: 85%; */
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     /* margin-top: 1em;
+//     margin-bottom: 1.5em; */
+// }
+
+
+#admin-table-summary {
+    font-weight: bold;
+}
+
+#author-image {
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ----- BLOG BRIEF ------- */
+
+.blog-brief {
+    h3 {
+        margin-bottom: 0.3em;
+    }
+
+    h3:hover {
+        text-decoration: underline;
+    }
+
+    .date {
+        font-weight: 600;
+    }
+
+    .info {
+        font-size: 0.8em;
+    }
+
+    .summary {
+        color: black;
+        opacity: 0.84;
+        font-size: 1.2em;
+    
+        overflow: hidden;
+        max-height: 4.4em;
+        min-height: 1.1em;
+    }
+}
+
+@media all and (min-width: 769px) { /*for large devices*/
+    .blog-brief img {
+        height: 5em;
+        max-width: 13em;
+        float: left;       
+        margin-right: 0.8em;
+        display: block;
+    }
+}
+
+@media all and (max-width: 768px) { /*FOR MOBILE*/
+    .blog-brief img {
+        float: clear;
+        max-width: 85%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.8em;
+    }
+}
+
+.continue-reading {
+    clear: both;
+    margin-top: 0.5em;
+    font-weight: 600;
+
+    a {
+        color: black;
+        opacity: 0.84;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: black;
+        opacity: 0.84;
+    }
+}
+
+/**************/
+
+.sections-list {
+    p {line-height: 1.7em;}
+
+    a:hover {text-decoration: underline;}
+}
+
+.footer {
+    p {font-size: 0.9em;}
+    a {text-decoration: underline;}
+}
+
+// Hide space taken by google search results
+#___gcse_0 {
+    max-height: 0;
+}
+
+/***** BULMA FIX ******/
+.columns {
+    margin: 0;
+}
+
+@import "chordsheet.scss"

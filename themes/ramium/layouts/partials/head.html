@@ -11,25 +11,25 @@
 {{- partial "meta.html" . -}}
 
 <link rel="canonical" href="{{ .Permalink }}" />
-
 <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}image/favicon.ico">
 
-<link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | relURL }}">
-<link rel="stylesheet" href="{{ "/css/bulma.min.css" | relURL }}">
-
-{{ if not (in (string .Site.BaseURL) "localhost") }}
-{{ template "_internal/google_analytics_async.html" . }}
+{{ if .Site.Params.leanCSS }}
+    {{ $css := resources.Get "ramium.scss" | toCSS | postCSS | minify}}
+    <link rel="stylesheet" href="{{ $css.Permalink | relURL }}">
+{{ else }}
+    {{ $css := resources.Get "ramium.scss" | toCSS | minify}}
+    <link rel="stylesheet" href="{{ $css.Permalink | relURL }}">
 {{ end }}
 
-<script src={{ "/js/ramium.js" | relURL }}></script>
-<link rel="stylesheet" href={{ "/css/ramium.css" | relURL }}>
-
-{{ if .Params.chordsheet }}
-<link rel="stylesheet" href={{ "/css/chordsheet.css" | relURL }}>
-{{ end }}
+{{ $js := resources.Get "ramium.js" | minify }}
+<script src="{{ $js.Permalink | relURL }}"></script>
 
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
+{{ end }}
+
+{{ if not (in (string .Site.BaseURL) "localhost") }}
+{{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
 
 {{ if .Site.Params.adsense }}

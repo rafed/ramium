@@ -1,0 +1,27 @@
+.chord-sheet {
+    line-height: 1.2em;
+
+    .row {
+        margin-bottom: 0.8em;
+    }
+
+    .column {
+        display: inline-block;
+        padding: 0;
+        margin-right: 0.3em;
+    }
+
+    .chord {
+        color: rgb(0, 0, 177);
+        font-weight: 600;
+    }
+
+    .lyrics {
+        font-size: 0.9em;
+        font-weight: 400;
+    }
+
+    .paragraph {
+        margin-bottom: 3em;
+    }
+}

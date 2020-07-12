@@ -12,6 +12,7 @@ enableemoji = false
 
 [params]
     description = "A description for the meta tag of the site"
+    leanCSS = false # make true for leaner css (requires npm installs, see docs)
     googleSearch = "000151824860492892407:kd5zijxwj6a"
     adsense = "ca-pub-7125931910131040"
     showDate = true # make false if dont want to show date for evergeen articles
