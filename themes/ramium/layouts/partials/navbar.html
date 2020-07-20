@@ -16,23 +16,37 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      {{ range .Site.Menus.main }}
-      {{ if .HasChildren }}
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">{{- .Name -}}</a>
-        <div class="navbar-dropdown">
-          {{ range .Children }}
-          <a class="navbar-item" href="{{ .URL }}">
-            {{- .Name -}}
-          </a>
+      {{ range .Site.Data.navbar }}
+        {{ if not .dropdown }}
+          {{ $url := "" }}
+          {{ if .url }}
+            {{ $url =  .url | relURL }}
+          {{ else }}
+            {{ $url = .title | urlize | relURL }}
           {{ end }}
-        </div>
-      </div>
-      {{ else }}
-      <a class="navbar-item" href="{{ .URL }}">
-        {{- .Name -}}
-      </a>
-      {{ end }}
+          <a class="navbar-item" href="{{ $url }}">
+            {{ .title }}
+          </a>
+        {{ end }}
+
+        {{ if .dropdown }}
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">{{ .title }}</a>
+            <div class="navbar-dropdown">
+              {{ range .dropdown }}
+              {{ $url := "" }}
+              {{ if .url }}
+                {{ $url =  .url | relURL}}
+              {{ else }}
+                {{ $url = .title | urlize | relURL }}
+              {{ end }}
+              <a class="navbar-item" href="{{ $url }}">
+                {{ .title }}
+              </a>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
       {{ end }}
     </div>
 

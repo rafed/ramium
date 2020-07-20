@@ -1,0 +1,8 @@
+- title: Home
+  url: "/"
+- title: Blog
+  dropdown: 
+    - title: Posts
+    - title: Tags
+    - title: Sections
+- title: Author

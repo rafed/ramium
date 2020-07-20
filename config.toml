@@ -1,5 +1,6 @@
 baseURL = "https://rafed.github.io/ramium/"
-#CanonifyURLs=true
+# CanonifyURLs=true
+# npm install postcss-cli purgecss
 
 languageCode = "en-us"
 theme = "ramium"
@@ -29,37 +30,6 @@ enableemoji = false
 
 [markup.goldmark.renderer]
     unsafe = true
-
-[menu]
-    [[menu.main]]
-        name = "Home"
-        url = "/"
-        weight = 1
-
-    [[menu.main]]
-        identifier = "blog"
-        name = "This Blog"
-        weight = 2
-            [[menu.main]]
-                parent = "blog"
-                name = "All Tags"
-                url = "/tags/"
-                weight = 1
-            [[menu.main]]
-                parent = "blog"
-                name = "All Sections"
-                url = "/sections/"
-                weight = 2
-            [[menu.main]]
-                parent = "blog"
-                name = "All Posts"
-                url = "/posts/"
-                weight = 3
-    
-    [[menu.main]]
-        name = "Author"
-        url = "/authorr/"
-        weight = 3
 
 [permalinks]
     posts = "/:section/:title/"
