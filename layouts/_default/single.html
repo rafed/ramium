@@ -35,11 +35,9 @@
     </div>
 
     <div class="blog-text">
-        {{ with .Params.image }}
         <figure>
-            <img src="{{ . | relURL }}">
+		<img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
         </figure>
-        {{ end }}
 
         {{ .Content }}
     </div>

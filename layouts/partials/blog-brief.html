@@ -37,7 +37,7 @@
     <div>
         {{ if .Params.image }}
             <a href="{{ .RelPermalink }}">
-                <img src="{{ .Params.image | relURL }}">
+		<img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
             </a>
         {{ end }}
 

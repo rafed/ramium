@@ -4,10 +4,10 @@
         <figure class="media-left">
             <div class="image is-128x128">
                 <!-- <div class="image is-4by3"> -->
-                {{ with .Params.image }}
-                <img src="{{ . | relURL }}">
+                {{ if .Params.image }}
+		<img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
                 {{ else }}
-                <img src="{{ "/image/default.jpeg" | relURL }}">
+		<img src="{{ "/image/default.jpeg" | relURL }}" alt="{{ .Title }}">
                 {{ end }}
             </div>
         </figure>
