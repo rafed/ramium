@@ -30,8 +30,3 @@ enableemoji = false
 
 [markup.goldmark.renderer]
     unsafe = true
-
-[permalinks]
-    posts = "/:section/:title/"
-    getting-started-with-ramium = "/:section/:title/"
-    introduction-to-ramium = "/:section/:title/"
