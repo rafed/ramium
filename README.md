@@ -9,7 +9,7 @@ A modern hugo theme for awesome blogs
 
 - Google search bar
 - Google Analytics
-- Social sharing bar (facebook, twitter, reddit)
+- Social sharing bar (Facebook, Twitter, Reddit, Pinterest)
 - Comments with Disqus
 - Customizable navbar
 - Admin panel (Not a real admin panel though. It simply shows the summary of the total number of posts, tags and sections)
@@ -26,10 +26,10 @@ A modern hugo theme for awesome blogs
 - Add tags to articles and list articles by tags
 - Add chord to lyrics (CSS style for [ChordSheetJs](https://github.com/martijnversluis/ChordSheetJS))
 
-#### Future plans
+<!-- #### Future plans
 - Google adsense
 - Suggestions for reading more articles at the end of an article
-- Support for facebook comments
+- Support for Facebook comments -->
 
 ## Installation & Update
 
@@ -50,7 +50,7 @@ If you want to know more information, see [Hugo doc](https://gohugo.io/themes/in
 1. Make sure you follow the template structure of the examplesite (including the config.toml)
 2. When you manually create files by following [quick start (step4)](https://gohugo.io/getting-started/quick-start/#step-4-add-some-content), you should command `hugo new posts/<filename>.md` instead of `hugo new post/<filename>.md`.
 3. For the admin panel, sections list and author page to work the 'addons' directory must not be deleted.
-4. Detailed instructions are coming soon [here](https://themes.gohugo.io/theme/ramium/getting-started-with-ramium/).
+<!-- 4. Detailed instructions are coming soon [here](https://themes.gohugo.io/theme/ramium/getting-started-with-ramium/). -->
 
 #### `config.toml` example
 
@@ -86,40 +86,21 @@ enableemoji = false
 [markup.goldmark.renderer]
     unsafe = true
 
-[menu]
-    [[menu.main]]
-        name = "Home"
-        url = "/"
-        weight = 1
+## Modify Navbar
 
-    [[menu.main]]
-        identifier = "blog"
-        name = "This Blog"
-        weight = 2
-            [[menu.main]]
-                parent = "blog"
-                name = "All Tags"
-                url = "/tags/"
-                weight = 1
-            [[menu.main]]
-                parent = "blog"
-                name = "All Sections"
-                url = "/sections/"
-                weight = 2
-            [[menu.main]]
-                parent = "blog"
-                name = "All Posts"
-                url = "/posts/"
-                weight = 3
-    
-    [[menu.main]]
-        name = "Author"
-        url = "/authorr/"
-        weight = 3
+To modify the navbar, edit data/navbar.yml. Example yml shown below.
+```
+- title: Home
+  url: "/"
+- title: Blog
+  dropdown: 
+    - title: Posts
+    - title: Tags
+    - title: Sections
+- title: Author
 ```
 
 ## Frontmatter example
-
 ```
 ---
 title: {{ replace .Name "-" " " | title }}
