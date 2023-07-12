@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="{{ "/css/bulma.min.css" | relURL }}">
 
 {{ if not (in (string .Site.BaseURL) "localhost") }}
-{{ template "_internal/google_analytics_async.html" . }}
+{{ template "_internal/google_analytics.html" . }}
 {{ end }}
 
 <script src={{ "/js/ramium.js" | relURL }}></script>
