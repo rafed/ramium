@@ -1,3 +1,5 @@
+> ⚠️ Check out my newer theme [BlogRa](https://github.com/rafed/BlogRa) which has a better UI and is better maintained.
+
 # Ramium
 A modern hugo theme for awesome blogs
 
